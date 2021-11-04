@@ -1,1 +1,0 @@
-# soloProject-1
