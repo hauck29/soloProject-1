@@ -29,28 +29,44 @@ function LoginFormPage() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <div className='login-message'>
+        <h2>
+          Welcome to CuriousCat!
+        </h2>
+        <p>
+          Please enter your information below to continue.
+        </p>
+      </div>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
-      <label>
-        Username or Email
-        <input
-          type="text"
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Log In</button>
+        <div className='inputs-div'>
+          <div className='user-email-div'>
+              <label className='login-titles'>
+                Username or Email:
+                <input className='login-labels'
+                  type="text"
+                  value={credential}
+                  onChange={(e) => setCredential(e.target.value)}
+                  required
+                />
+              </label>
+          </div>
+          <div className='password-div'>
+              <label className='login-titles'>
+                Password:
+                <input className='login-labels'
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </label>
+          </div>
+        </div>
+        <div className='login-btn-div'>
+          <button className='login-btn' type="submit">Log In</button>
+        </div>
     </form>
   );
 }

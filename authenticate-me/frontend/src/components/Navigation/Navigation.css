@@ -1,0 +1,82 @@
+
+.home-link {
+    display: flex;
+    justify-content: flex-end;
+    font-size: small;
+}
+.navLinks {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    font-size:small;
+}
+
+.profile-btn {
+    width: 100px;
+    background-color: lightskyblue;
+    border-radius: 50%;
+}
+.prof-btn-div {
+    display: flex;
+    justify-content: flex-end;
+}
+.logout-btn {
+    background-color: lightskyblue;
+}
+.home-link{
+    background-color: lightsteelblue;
+}
+.signup-link{
+    background-color: lightsteelblue;
+}
+.login-link{
+    background-color: lightsteelblue;
+}
+
+
+h1,
+p,
+a {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato";
+}
+h1 {
+    font-size: 2.8em;
+    padding: 10px 0;
+    font-weight: 800;
+    font-family:cursive;
+}
+p {
+    font-size: 1.1em;
+    font-weight: 100;
+    letter-spacing: 5px;
+    padding-bottom: 20px;
+}
+.header {
+    width: 100%;
+    padding: 60px 0;
+    text-align: center;
+    background: lightsteelblue;
+    color: white;
+}
+.btn-bgstroke {
+    font-size: 20px;
+    display: inline-block;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 300;
+    margin-top: 30px;
+}
+.btn-bgstroke:hover {
+    background-color: white;
+    color: #33cccc;
+}
+.banner-img {
+    height: 50px;
+    background-size: 150px;
+
+    background-image: url(https://thumbs.dreamstime.com/z/adorable-white-cats-banner-adorable-white-cats-banner-cartoon-style-171756834.jpg);
+}

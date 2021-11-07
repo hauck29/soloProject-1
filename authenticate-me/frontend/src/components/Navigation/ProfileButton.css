@@ -1,0 +1,9 @@
+button {
+    display: flex;
+    width: 50px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.user-info {
+    color: rgb(61, 69, 78);
+}

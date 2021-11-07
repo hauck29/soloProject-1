@@ -1,0 +1,37 @@
+.login-labels {
+    background-color: lightsteelblue;
+}
+.login-titles {
+    padding: 20px;
+}
+.inputs-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+p{
+    font-size: smaller;
+}
+.login-btn-div {
+    display: flex;
+    justify-content: flex-end;
+}
+.user-email-div {
+    display: flex;
+}
+.password-div {
+    display: flex;
+}
+
+.login-message{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: rgb(91, 91, 91);
+}
+.signup-message{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: rgb(91, 91, 91);
+}

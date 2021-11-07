@@ -1,1 +1,23 @@
 /* TODO Add site wide styles */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a {
+    text-decoration: none;
+    color: rgb(105, 105, 105);
+}
+li {
+    list-style-type: none;
+}
+button {
+    background-color: lightsteelblue;
+    border-radius: 50%;
+    width: 200px;
+}
+body {
+    background-color: lightskyblue;
+}
+form {
+    width: 75%;
+    color: rgb(91, 91, 91);
+}
