@@ -1,0 +1,21 @@
+.sidebar-selections {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    align-items: flex-start;
+}
+.sidebar-selection:hover {
+    background-color: slategray;
+    border-radius: 10px;
+}
+.sidebar-selection {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+.sidebar-selection > img {
+    height: 45px;
+    width: 80px;
+    border-radius: 100%;
+}

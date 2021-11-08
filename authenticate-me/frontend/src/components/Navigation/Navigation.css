@@ -1,13 +1,31 @@
 
+.nav-head {
+    display: flex;
+}
 .home-link {
     display: flex;
     justify-content: flex-end;
     font-size: small;
+    height: 30px;
+    background-color: lightsteelblue;
+    padding-right: 10px;
+}
+.signup-link{
+    display: flex;
+    background-color: lightsteelblue;
+    height: 30px;
+    padding-right: 10px;
+}
+.login-link{
+    display: flex;
+    background-color: lightsteelblue;
+    height: 30px;
 }
 .navLinks {
     display: flex;
-    align-items: flex-start;
-    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: row;
     font-size:small;
 }
 
@@ -22,15 +40,6 @@
 }
 .logout-btn {
     background-color: lightskyblue;
-}
-.home-link{
-    background-color: lightsteelblue;
-}
-.signup-link{
-    background-color: lightsteelblue;
-}
-.login-link{
-    background-color: lightsteelblue;
 }
 
 
@@ -77,6 +86,20 @@ p {
 .banner-img {
     height: 50px;
     background-size: 150px;
-
+    width: 100%;
     background-image: url(https://thumbs.dreamstime.com/z/adorable-white-cats-banner-adorable-white-cats-banner-cartoon-style-171756834.jpg);
+}
+.search-icon {
+    width: 25px;
+}
+.header-search-bar {
+    display: flex;
+    padding-left: 10px;
+}
+.ask-q-btn {
+    background-color: slategray;
+    width: 100%;
+    font-size: smaller;
+    display: flex;
+    align-items: flex-end;
 }
