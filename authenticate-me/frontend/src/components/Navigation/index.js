@@ -40,7 +40,6 @@ function Navigation({ isLoaded }) {
               <h1>CuriousCat</h1>
               <p>Answering Life's Meaningless Questions</p>
               <NavLink className="home-link" exact to="/">
-                {/* Home Link */}
                 <img
                   src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-house-hygiene-kiranshastry-lineal-kiranshastry.png"
                   alt=""

@@ -1,6 +1,7 @@
 
 .nav-head {
     display: flex;
+    justify-content: space-between;
 }
 .home-link {
     display: flex;
