@@ -32,7 +32,7 @@
 
 .profile-btn {
     width: 100px;
-    background-color: lightskyblue;
+    background-color: slategray;
     border-radius: 50%;
 }
 .prof-btn-div {
@@ -40,7 +40,7 @@
     justify-content: flex-end;
 }
 .logout-btn {
-    background-color: lightskyblue;
+    background-color: slategray;
 }
 
 
