@@ -39,25 +39,31 @@ function Navigation({ isLoaded }) {
             <div className="navLinks">
               <h1>CuriousCat</h1>
               <p>Answering Life's Meaningless Questions</p>
-              <NavLink className="home-link" exact to="/">
-                <img
-                  src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-house-hygiene-kiranshastry-lineal-kiranshastry.png"
-                  alt=""
-                />
-              </NavLink>
-              {isLoaded && sessionLinks}
-              <div className="header-search-bar">
-                <img
-                  className="search-icon"
-                  src="https://img.icons8.com/fluency-systems-regular/48/000000/search--v1.png"
-                  alt=""
-                />
-                <input type="text" placeholder="Search CuriousCat" />
-              </div>
-              <div className="add-q-btn">
-                <button className="ask-q-btn" type="submit">
-                  Ask a Question
-                </button>
+              <div className="head-sec">
+                <div className="links-left">
+                  <NavLink className="home-link" exact to="/">
+                    <img
+                      src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-house-hygiene-kiranshastry-lineal-kiranshastry.png"
+                      alt=""
+                    />
+                  </NavLink>
+                  {isLoaded && sessionLinks}
+                </div>
+                <div className="links-right">
+                  <div className="header-search-bar">
+                    <img
+                      className="search-icon"
+                      src="https://img.icons8.com/fluency-systems-regular/48/000000/search--v1.png"
+                      alt=""
+                    />
+                    <input type="text" placeholder="Search CuriousCat" />
+                  </div>
+                  <div className="add-q-btn">
+                    <button className="ask-q-btn" type="submit">
+                      Ask a Question
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

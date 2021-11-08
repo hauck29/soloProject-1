@@ -1,7 +1,13 @@
 
 .nav-head {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+}
+.head-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 .home-link {
     display: flex;
@@ -23,10 +29,9 @@
     height: 30px;
 }
 .navLinks {
-    display: flex;
-    justify-content: flex-end;
+    /* display: flex;
     align-items: flex-end;
-    flex-direction: row;
+    flex-direction: row; */
     font-size:small;
 }
 
@@ -99,8 +104,17 @@ p {
 }
 .ask-q-btn {
     background-color: slategray;
-    width: 100%;
+    width: 75%;
     font-size: smaller;
+    display: flex;
+    align-items: flex-end;
+}
+.links-left {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.links-right {
     display: flex;
     align-items: flex-end;
 }
