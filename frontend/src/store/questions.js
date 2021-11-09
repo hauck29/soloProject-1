@@ -1,10 +1,9 @@
-import { response } from '../../../backend/app';
 import { csrfFetch } from './csrf';
 
 const SET_QUESTIONS = 'questions/setQuestions';
-const ADD_QUESTION = 'questions/addQuestion';
-const EDIT_QUESTION = 'questions/editQuestion';
-const REMOVE_QUESTION = 'questions/delete';
+// const ADD_QUESTION = 'questions/addQuestion';
+// const EDIT_QUESTION = 'questions/editQuestion';
+// const REMOVE_QUESTION = 'questions/delete';
 
 const setQuestions = payload => {
     return {
@@ -13,31 +12,32 @@ const setQuestions = payload => {
     };
 };
 
-const addQuestion = payload => {
-    return {
-        type: ADD_QUESTION,
-        payload,
-    };
-};
+// const addQuestion = payload => {
+//     return {
+//         type: ADD_QUESTION,
+//         payload,
+//     };
+// };
 
-const editQuestion = payload => {
-    return {
-        type: EDIT_QUESTION,
-        payload,
-    };
-};
+// const editQuestion = payload => {
+//     return {
+//         type: EDIT_QUESTION,
+//         payload,
+//     };
+// };
 
-const removeQuestion = id => {
-    return {
-        type: REMOVE_QUESTION,
-        payload: id,
-    };
-};
+// const removeQuestion = id => {
+//     return {
+//         type: REMOVE_QUESTION,
+//         payload: id,
+//     };
+// };
 
-export const getQuestions = (id) => async (dispatch) => {
+export const getQuestions = () => async (dispatch) => {
     const res = await csrfFetch('/api/questions');
     if(res.ok) {
-        const questions = await response.json();
+        const questions = await res.json();
+        console.log(questions);
         dispatch(setQuestions(questions));
     }
 };
@@ -48,6 +48,8 @@ const questionReducer = (state = {}, action) => {
         case SET_QUESTIONS:
             action.payload.forEach(question => (newState[question.id] = question));
             return newState;
+        default:
+            return state;
     }
 };
 
