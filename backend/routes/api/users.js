@@ -60,13 +60,6 @@ const validateSignup = [
     .isLength({ min: 6 })
     .withMessage("Password must be 6 characters or more."),
 
-  //getting a 'db is not defined' error logged to the
-  //browser when 'handleValidationErrors' below is commented in
-  //no non-functionality with it commented out, it seems
-  //so having it commented out is ok, BUT WHY
-
-  // handleValidationErrors,
-
   check("confirmpassword")
     .exists({ checkFalsy: true })
     .withMessage("Please provide a value for Confirm Password")
@@ -78,22 +71,25 @@ const validateSignup = [
       }
       return true;
     }),
+
+
+  handleValidationErrors,
 ];
 
-//signup
+// Sign up
 router.post(
-  "/",
-  validateSignup,
-  asyncHandler(async (req, res) => {
-    const { email, password, username } = req.body;
-    const user = await User.signup({ email, username, password });
+    '/',
+    validateSignup,
+    asyncHandler(async (req, res) => {
+      const { email, password, username } = req.body;
+      const user = await User.signup({ email, username, password });
 
-    await setTokenCookie(res, user);
+      await setTokenCookie(res, user);
 
-    return res.json({
-      user,
-    });
-  })
-);
+      return res.json({
+        user,
+      });
+    }),
+  );
 
 module.exports = router;

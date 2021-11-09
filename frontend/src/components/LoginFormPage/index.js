@@ -68,6 +68,7 @@ function LoginFormPage() {
           <button className='login-btn' type="submit">Log In</button>
         </div>
     </form>
+    
   );
 }
 

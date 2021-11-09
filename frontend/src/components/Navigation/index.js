@@ -47,6 +47,9 @@ function Navigation({ isLoaded }) {
                       alt=""
                     />
                   </NavLink>
+                  <NavLink className='demo-btn' exact to='/'>
+                    
+                  </NavLink>
                   {isLoaded && sessionLinks}
                 </div>
                 <div className="links-right">

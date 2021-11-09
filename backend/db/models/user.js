@@ -1,8 +1,7 @@
 'use strict';
+const { Validator } = require('sequelize');
 const bcrypt = require('bcryptjs');
 
-//don't forget to import this if you are validating data with "Validator"
-const { Validator } = require('sequelize');
 
 
 module.exports = (sequelize, DataTypes) => {
@@ -11,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [4, 30],
+        len: [3, 30],
         isNotEmail(value) {
           if (Validator.isEmail(value)) {
             throw new Error('Cannot be an email.');
@@ -49,21 +48,17 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
   });
-
   User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
     const { id, username, email } = this; // context will be the User instance
     return { id, username, email };
   };
-
   User.prototype.validatePassword = function (password) {
     return bcrypt.compareSync(password, this.hashedPassword.toString());
-   };
-
-   User.getCurrentUserById = async function (id) {
+  };
+  User.getCurrentUserById = async function (id) {
     return await User.scope('currentUser').findByPk(id);
-   };
-
-   User.login = async function ({ credential, password }) {
+  };
+  User.login = async function ({ credential, password }) {
     const { Op } = require('sequelize');
     const user = await User.scope('loginUser').findOne({
       where: {
@@ -77,7 +72,6 @@ module.exports = (sequelize, DataTypes) => {
       return await User.scope('currentUser').findByPk(user.id);
     }
   };
-
   User.signup = async function ({ username, email, password }) {
     const hashedPassword = bcrypt.hashSync(password);
     const user = await User.create({
@@ -90,16 +84,8 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = function(models) {
     // associations can be defined here
-    User.hasMany(models.Question, {
-      foreignKey: 'ownerId',
-      onDelete: 'cascade',
-      hooks: true
-    });
-    User.hasMany(models.Answer, {
-      foreignKey: 'userId',
-      onDelete: 'cascade',
-      hooks: true
-    });
   };
+
+
   return User;
 };
