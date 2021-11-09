@@ -15,3 +15,5 @@ router.post('/', asyncHandler(async(req, res) => {
     return  res.json({newQ});
 
 }))
+
+module.exports = router;
