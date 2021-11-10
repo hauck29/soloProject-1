@@ -2,7 +2,7 @@ import { csrfFetch } from './csrf';
 
 const SET_QUESTIONS = 'questions/setQuestions';
 const ADD_A_QUESTION = 'questions/addQuestion';
-// const EDIT_QUESTION = 'questions/editQuestion';
+const EDIT_A_QUESTION = 'questions/editQuestion';
 const REMOVE_A_QUESTION = 'questions/delete';
 
 const setQuestions = payload => {
@@ -19,12 +19,12 @@ const addAQuestion = payload => {
     };
 };
 
-// const editQuestion = payload => {
-//     return {
-//         type: EDIT_QUESTION,
-//         payload,
-//     };
-// };
+const editAQuestion = payload => {
+    return {
+        type: EDIT_A_QUESTION,
+        payload,
+    };
+};
 
 const removeAQuestion = id => {
     return {
@@ -53,6 +53,16 @@ export const addQuestion = question => async (dispatch) => {
     }
 };
 
+export const editQueston = id => async dispatch => {
+    const res = await csrfFetch(`/api/questions/${id}`, {
+        method: 'PUT',
+    });
+    if(res.ok) {
+        const data = await  res.json();
+        dispatch(editAQuestion(id));
+    }
+}
+
 export const removeQuestion = id => async dispatch => {
     const res = await csrfFetch(`/api/questions/${id}`, {
         method: 'DELETE',
@@ -69,6 +79,9 @@ const questionReducer = (state = {}, action) => {
             action.payload.forEach(question => (newState[question.id] = question));
             return newState;
         case ADD_A_QUESTION:
+            newState = { ...state, [action.payload.id]: action.payload };
+            return newState;
+        case EDIT_A_QUESTION:
             newState = { ...state, [action.payload.id]: action.payload };
             return newState;
         case REMOVE_A_QUESTION:

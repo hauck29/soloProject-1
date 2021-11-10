@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Questions from "./components/Feed";
 import CreateQuestion from "./components/CreateQuestion";
+import EditQuestion from "./components/EditQuestion";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +33,9 @@ function App() {
           <Route path='/newQuestion'>
             <CreateQuestion />
           </Route>
-          {/* <Sidebar /> */}
+          <Route path='/editQuestion'>
+            <EditQuestion />
+          </Route>
         </Switch>
       )}
     </>

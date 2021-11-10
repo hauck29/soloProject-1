@@ -32,7 +32,7 @@ const Questions = () => {
               </p>
               <div className='q-opts'>
                 <button onClick={() => handleDelete(id)} type='submit' className='del-q-btn'>Delete Question</button>
-                <button type='submit' className='del-q-btn' >Edit Question</button>
+                <button onClick={() => history.push('/editQuestion')} type='submit' className='del-q-btn' >Edit Question</button>
               </div>
           </h3>
         ))}

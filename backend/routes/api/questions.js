@@ -26,6 +26,7 @@ router.put('/:id(\\d+)', handleValidationErrors,
     asyncHandler(async(req, res) => {
         const {title, description} = req.body;
         const editQ = await Question.findByPk(req.params.id);
+        await editQ.update({title, description});
         return res.json({editQ});
     }));
 
