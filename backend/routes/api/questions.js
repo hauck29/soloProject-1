@@ -14,14 +14,20 @@ router.get('/', asyncHandler(async(req, res) => {
 
 
 //posting a new question to the feed
-router.post('/', requireAuth, handleValidationErrors, asyncHandler(async(req, res) => {
-    const {ownerId, title, description} = req.body;
-    const newQ = await Question.create({ownerId, title, description});
-    return res.json({newQ});
+router.post('/', requireAuth, handleValidationErrors,
+    asyncHandler(async(req, res) => {
+        const {ownerId, title, description} = req.body;
+        const newQ = await Question.create({ownerId, title, description});
+        return res.json({newQ});
 }));
 
 //edit question in the feed
-
+router.put('/:id(\\d+)', handleValidationErrors,
+    asyncHandler(async(req, res) => {
+        const {title, description} = req.body;
+        const editQ = await Question.findByPk(req.params.id);
+        return res.json({editQ});
+    }));
 
 //deleting a question from the feed
 router.delete('/:id(\\d+)', requireAuth, handleValidationErrors, asyncHandler( async (req, res, next) => {
