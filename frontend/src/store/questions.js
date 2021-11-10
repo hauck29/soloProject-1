@@ -1,9 +1,9 @@
 import { csrfFetch } from './csrf';
 
 const SET_QUESTIONS = 'questions/setQuestions';
-// const ADD_QUESTION = 'questions/addQuestion';
+const ADD_A_QUESTION = 'questions/addQuestion';
 // const EDIT_QUESTION = 'questions/editQuestion';
-// const REMOVE_QUESTION = 'questions/delete';
+const REMOVE_A_QUESTION = 'questions/delete';
 
 const setQuestions = payload => {
     return {
@@ -12,12 +12,12 @@ const setQuestions = payload => {
     };
 };
 
-// const addQuestion = payload => {
-//     return {
-//         type: ADD_QUESTION,
-//         payload,
-//     };
-// };
+const addAQuestion = payload => {
+    return {
+        type: ADD_A_QUESTION,
+        payload,
+    };
+};
 
 // const editQuestion = payload => {
 //     return {
@@ -26,12 +26,12 @@ const setQuestions = payload => {
 //     };
 // };
 
-// const removeQuestion = id => {
-//     return {
-//         type: REMOVE_QUESTION,
-//         payload: id,
-//     };
-// };
+const removeAQuestion = id => {
+    return {
+        type: REMOVE_A_QUESTION,
+        payload: id,
+    };
+};
 
 export const getQuestions = () => async (dispatch) => {
     const res = await csrfFetch('/api/questions');
@@ -42,11 +42,38 @@ export const getQuestions = () => async (dispatch) => {
     }
 };
 
+export const addQuestion = question => async (dispatch) => {
+    const res = await csrfFetch('/api/questions', {
+        method: 'POST',
+        body: JSON.stringify(question),
+    });
+    if(res.ok) {
+        const data = await res.json();
+        dispatch(addAQuestion(data.newQ));
+    }
+};
+
+export const removeQuestion = id => async dispatch => {
+    const res = await csrfFetch(`/api/questions/${id}`, {
+        method: 'DELETE',
+    });
+    if(res.ok) {
+        dispatch(removeAQuestion(id));
+    }
+};
+
 const questionReducer = (state = {}, action) => {
     let newState = {};
     switch (action.type) {
         case SET_QUESTIONS:
             action.payload.forEach(question => (newState[question.id] = question));
+            return newState;
+        case ADD_A_QUESTION:
+            newState = { ...state, [action.payload.id]: action.payload };
+            return newState;
+        case REMOVE_A_QUESTION:
+            newState = { ...state};
+            delete newState[action.payload];
             return newState;
         default:
             return state;

@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Questions from "./components/Feed";
+import CreateQuestion from "./components/CreateQuestion";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path='/newQuestion'>
+            <CreateQuestion />
           </Route>
           {/* <Sidebar /> */}
         </Switch>

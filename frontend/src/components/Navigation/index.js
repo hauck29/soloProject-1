@@ -3,10 +3,13 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
+import { useHistory } from "react-router-dom";
+
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
 
+  const history = useHistory();
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = <ProfileButton user={sessionUser} />;
@@ -48,7 +51,7 @@ function Navigation({ isLoaded }) {
                     />
                   </NavLink>
                   <NavLink className='demo-btn' exact to='/'>
-                    
+
                   </NavLink>
                   {isLoaded && sessionLinks}
                 </div>
@@ -62,7 +65,7 @@ function Navigation({ isLoaded }) {
                     <input type="text" placeholder="Search CuriousCat" />
                   </div>
                   <div className="add-q-btn">
-                    <button className="ask-q-btn" type="submit">
+                    <button onClick={() => history.push('/newQuestion')} className="ask-q-btn" type="submit">
                       Ask a Question
                     </button>
                   </div>
