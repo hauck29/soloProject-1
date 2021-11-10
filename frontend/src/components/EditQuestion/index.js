@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import editQuestion from '../../store/questions';
+import {editQuestion} from '../../store/questions';
 
 const EditQuestion = () => {
+
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const history = useHistory();
@@ -12,6 +13,7 @@ const EditQuestion = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const payload = {
+            // questionId,
             title,
             description
         };

@@ -53,13 +53,15 @@ export const addQuestion = question => async (dispatch) => {
     }
 };
 
-export const editQueston = id => async dispatch => {
-    const res = await csrfFetch(`/api/questions/${id}`, {
+export const editQuestion = question => async dispatch => {
+    const res = await csrfFetch(`/api/questions/${question.id}`, {
         method: 'PUT',
+        body: JSON.stringify(question)
     });
     if(res.ok) {
-        const data = await  res.json();
-        dispatch(editAQuestion(id));
+        const editedQuestion = await  res.json();
+        dispatch(editAQuestion(editedQuestion.editQ));
+        return editedQuestion;
     }
 }
 

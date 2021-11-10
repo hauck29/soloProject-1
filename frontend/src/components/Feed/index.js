@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom";
 import "./feed.css";
 import { getQuestions, removeQuestion } from "../../store/questions";
 import { useHistory } from "react-router";
+import FeedQuestion from "./feed-question";
 
 const Questions = () => {
   const dispatch = useDispatch();
@@ -22,19 +23,8 @@ const Questions = () => {
   return (
     <div>
       <div className="questions">
-        {questions?.map(({ id, ownerId, title, description }) => (
-          <h3>
-            <p>Question {id}</p>
-            <p>Posted by user number {ownerId}</p>
-            {title}
-              <p>
-                {description}
-              </p>
-              <div className='q-opts'>
-                <button onClick={() => handleDelete(id)} type='submit' className='del-q-btn'>Delete Question</button>
-                <button onClick={() => history.push('/editQuestion')} type='submit' className='del-q-btn' >Edit Question</button>
-              </div>
-          </h3>
+        {questions?.map((question) => (
+          <FeedQuestion question={question}/>
         ))}
       </div>
     </div>
