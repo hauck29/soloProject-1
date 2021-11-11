@@ -5,6 +5,7 @@ import { addQuestion } from '../../store/questions';
 import "./createQuestion.css";
 
 const CreateQuestion = () => {
+    const [userName, setUserName] = useState('');
     const [ownerId, setOwnerId] = useState('');
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -14,6 +15,7 @@ const CreateQuestion = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const payload = {
+            userName,
             ownerId,
             title,
             description
@@ -28,9 +30,9 @@ const CreateQuestion = () => {
             <h3>Add A Question</h3>
             <form onSubmit={handleSubmit} >
                 <input className='o-i'
-                    onChange={(e) => setOwnerId(e.target.value)}
-                    value={ownerId}
-                    placeholder='Owner ID'
+                    onChange={(e) => setUserName(e.target.value)}
+                    value={userName}
+                    placeholder='User Name'
                 />
                 <input
                     onChange={(e) => setTitle(e.target.value)}

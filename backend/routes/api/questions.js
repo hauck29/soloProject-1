@@ -17,7 +17,8 @@ router.get('/', asyncHandler(async(req, res) => {
 router.post('/', requireAuth, handleValidationErrors,
     asyncHandler(async(req, res) => {
         const {ownerId, title, description} = req.body;
-        const newQ = await Question.create({ownerId, title, description});
+        const {userName} = req.session.auth;
+        const newQ = await Question.create({userName: userName, title, description});
         return res.json({newQ});
 }));
 

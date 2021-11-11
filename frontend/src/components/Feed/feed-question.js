@@ -10,6 +10,7 @@ const FeedQuestion = ({ question }) => {
   const [toEditQuestion, setToEditQuestion] = useState(false);
   const [title, setTitle] = useState(question.title);
   const [description, setDescription] = useState(question.description);
+  const [userName, setUserName] = useState(question.userName);
 
   const handleDelete = (id) => {
     dispatch(removeQuestion(id));
@@ -19,6 +20,7 @@ const FeedQuestion = ({ question }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = {
+      userName: userName,
       id: question.id,
       title,
       description,
@@ -31,7 +33,7 @@ const FeedQuestion = ({ question }) => {
     <div className='feed-div' >
       <h3>
         <p>Question {question.id}</p>
-        <p>Posted by user number {question.ownerId}</p>
+        {/* <p>Posted by {question.userName}</p> */}
         {question.title}
         <p>{question.description}</p>
         <div className="q-opts">
