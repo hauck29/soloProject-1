@@ -22,7 +22,7 @@ router.post('/', requireAuth, handleValidationErrors,
 }));
 
 //edit question in the feed
-router.put('/:id(\\d+)', handleValidationErrors,
+router.put('/:id(\\d+)', requireAuth, handleValidationErrors,
     asyncHandler(async(req, res) => {
         const {title, description} = req.body;
         const editQ = await Question.findByPk(req.params.id);
