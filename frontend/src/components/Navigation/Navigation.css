@@ -26,6 +26,7 @@ body {
     margin: 50px;
     border: 2px solid white;
     border-radius: 5px;
+    box-shadow: 0 0 20px black;
 }
 
 .head-sec {
@@ -123,6 +124,7 @@ button {
     justify-content: center;
     font-size: x-small;
     border-radius: 5px;
+    box-shadow: 0 0 5px black;
 }
 button:hover {
     background-color: white;
