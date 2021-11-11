@@ -29,11 +29,11 @@ const CreateQuestion = () => {
         <div className='add-question'>
             <h3>Add A Question</h3>
             <form onSubmit={handleSubmit} >
-                <input className='o-i'
+                {/* <input className='o-i'
                     onChange={(e) => setUserName(e.target.value)}
                     value={userName}
                     placeholder='User Name'
-                />
+                /> */}
                 <input
                     onChange={(e) => setTitle(e.target.value)}
                     value={title}
