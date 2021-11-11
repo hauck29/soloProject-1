@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { addQuestion } from '../../store/questions';
+import "./createQuestion.css";
 
 const CreateQuestion = () => {
     const [ownerId, setOwnerId] = useState('');
@@ -25,8 +26,8 @@ const CreateQuestion = () => {
     return (
         <div className='add-question'>
             <h3>Add A Question</h3>
-            <form onSubmit={handleSubmit} className='add-question'>
-                <input
+            <form onSubmit={handleSubmit} >
+                <input className='o-i'
                     onChange={(e) => setOwnerId(e.target.value)}
                     value={ownerId}
                     placeholder='Owner ID'

@@ -1,120 +1,101 @@
+body {
+    margin:0;
+    padding:0;
+    }
 
 .nav-head {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .head-sec {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 .home-link {
-    display: flex;
-    justify-content: flex-end;
-    font-size: small;
-    height: 30px;
-    background-color: lightsteelblue;
-    padding-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: small;
+  height: 30px;
+  background-color: lightsteelblue;
+  padding-right: 10px;
 }
-.signup-link{
-    display: flex;
-    background-color: lightsteelblue;
-    height: 30px;
-    padding-right: 10px;
+.signup-link {
+  display: flex;
+  background-color: lightsteelblue;
+  height: 30px;
+  padding-right: 10px;
 }
-.login-link{
-    display: flex;
-    background-color: lightsteelblue;
-    height: 30px;
+.login-link {
+  display: flex;
+  background-color: lightsteelblue;
+  height: 30px;
 }
 .navLinks {
-    /* display: flex;
-    align-items: flex-end;
-    flex-direction: row; */
-    font-size:small;
+  font-size: small;
 }
 
-.profile-btn {
-    width: 100px;
-    background-color: slategray;
-    border-radius: 50%;
-}
 .prof-btn-div {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
-.logout-btn {
-    background-color: slategray;
-}
-
-
 h1,
 p,
 a {
-    margin: 0;
-    padding: 0;
-    font-family: "Lato";
+  margin: 0;
+  padding: 0;
+  font-family: "Lato";
 }
 h1 {
-    font-size: 2.8em;
-    padding: 10px 0;
-    font-weight: 800;
-    font-family:cursive;
+  font-size: 2.8em;
+  padding: 10px 0;
+  font-weight: 800;
+  font-family: cursive;
 }
 p {
-    font-size: 1.1em;
-    font-weight: 100;
-    letter-spacing: 5px;
-    padding-bottom: 20px;
+  font-size: 1.1em;
+  font-weight: 100;
+  letter-spacing: 5px;
+  padding-bottom: 20px;
 }
 .header {
-    width: 100%;
-    padding: 60px 0;
-    text-align: center;
-    background: lightsteelblue;
-    color: white;
+  width: 100%;
+  padding: 60px 0;
+  text-align: center;
+  background: lightsteelblue;
+  color: white;
 }
-.btn-bgstroke {
-    font-size: 20px;
-    display: inline-block;
-    border: 1px solid white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 300;
-    margin-top: 30px;
-}
-.btn-bgstroke:hover {
-    background-color: white;
-    color: #33cccc;
-}
+
 .banner-img {
-    height: 50px;
-    background-size: 150px;
-    width: 100%;
-    background-image: url(https://thumbs.dreamstime.com/z/adorable-white-cats-banner-adorable-white-cats-banner-cartoon-style-171756834.jpg);
+  height: 50px;
+  background-size: 150px;
+  width: 100%;
+  background-image: url(https://thumbs.dreamstime.com/z/adorable-white-cats-banner-adorable-white-cats-banner-cartoon-style-171756834.jpg);
+  border-radius: 5px;
 }
 .search-icon {
-    width: 25px;
+  width: 25px;
 }
 .header-search-bar {
-    display: flex;
-    padding-left: 10px;
+  display: flex;
+  padding-left: 10px;
 }
-.ask-q-btn {
-    background-color: slategray;
-    width: 75%;
-    font-size: smaller;
-    display: flex;
-    align-items: flex-end;
-}
+
 .links-left {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
 .links-right {
+  display: flex;
+  align-items: flex-end;
+}
+button {
+    background-color: slategray;
+    width: 50px;
     display: flex;
-    align-items: flex-end;
+    justify-content: center;
+    font-size: x-small;
+    border-radius: 5px;
 }

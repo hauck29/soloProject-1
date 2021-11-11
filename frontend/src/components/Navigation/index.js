@@ -5,7 +5,6 @@ import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
 import { useHistory } from "react-router-dom";
 
-
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -50,9 +49,7 @@ function Navigation({ isLoaded }) {
                       alt=""
                     />
                   </NavLink>
-                  <NavLink className='demo-btn' exact to='/'>
-
-                  </NavLink>
+                  <NavLink className="demo-btn" exact to="/"></NavLink>
                   {isLoaded && sessionLinks}
                 </div>
                 <div className="links-right">
@@ -65,7 +62,11 @@ function Navigation({ isLoaded }) {
                     <input type="text" placeholder="Search CuriousCat" />
                   </div>
                   <div className="add-q-btn">
-                    <button onClick={() => history.push('/newQuestion')} className="ask-q-btn" type="submit">
+                    <button
+                      onClick={() => history.push("/newQuestion")}
+                      className="ask-q-btn"
+                      type="submit"
+                    >
                       Ask a Question
                     </button>
                   </div>

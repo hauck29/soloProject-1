@@ -28,44 +28,46 @@ const FeedQuestion = ({ question }) => {
   };
 
   return (
-    <h3>
-      <p>Question {question.id}</p>
-      <p>Posted by user number {question.ownerId}</p>
-      {question.title}
-      <p>{question.description}</p>
-      <div className="q-opts">
-        <button
-          onClick={() => handleDelete(question.id)}
-          type="submit"
-          className="del-q-btn"
-        >
-          Delete Question
-        </button>
-        <button
-          onClick={() => setToEditQuestion(!toEditQuestion)}
-          className="del-q-btn"
-        >
-          Edit Question
-        </button>
-      </div>
-      {toEditQuestion && (
-        <form onSubmit={handleSubmit}>
-          <input
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
-            placeholder="Question Title"
-          />
-          <input
-            onChange={(e) => setDescription(e.target.value)}
-            value={description}
-            placeholder="What is your question?"
-          />
-          <button className="question-sumbit-btn" type="submit">
-            Update Question
+    <div className='feed-div' >
+      <h3>
+        <p>Question {question.id}</p>
+        <p>Posted by user number {question.ownerId}</p>
+        {question.title}
+        <p>{question.description}</p>
+        <div className="q-opts">
+          <button
+            onClick={() => handleDelete(question.id)}
+            type="submit"
+            className="del-q-btn"
+          >
+            Delete Question
           </button>
-        </form>
-      )}
-    </h3>
+          <button
+            onClick={() => setToEditQuestion(!toEditQuestion)}
+            className="del-q-btn"
+          >
+            Edit Question
+          </button>
+        </div>
+        {toEditQuestion && (
+          <form onSubmit={handleSubmit}>
+            <input
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+              placeholder="Question Title"
+            />
+            <input
+              onChange={(e) => setDescription(e.target.value)}
+              value={description}
+              placeholder="What is your question?"
+            />
+            <button className="question-sumbit-btn" type="submit">
+              Update Question
+            </button>
+          </form>
+        )}
+      </h3>
+    </div>
   );
 };
 

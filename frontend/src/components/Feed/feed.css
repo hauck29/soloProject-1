@@ -1,14 +1,13 @@
 p {
     font-size: small;
 }
-.del-q-btn {
-    background-color: slategray;
-    width: 5%;
-    font-size: smaller;
-    display: flex;
-    align-items: flex-end;
-    font-size: x-small;
-}
+
 .q-opts {
     display: flex;
+}
+.feed-div {
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
+    margin-left: 100px;
 }
