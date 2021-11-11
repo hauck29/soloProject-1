@@ -17,18 +17,25 @@ function Navigation({ isLoaded }) {
       <>
         <NavLink className="signup-link" to="/signup">
           {/* Signup Link */}
-          <img
-            src="https://img.icons8.com/wired/64/000000/sign-up.png"
-            alt=""
-          />
+          <div className='home-link-cont'>
+            <img
+              src="https://img.icons8.com/wired/64/000000/sign-up.png"
+              alt=""
+            />
+            <p>Join</p>
+            </div>
         </NavLink>
         <NavLink className="login-link" to="/login">
           {/* Login Link */}
-          <img
-            src="https://img.icons8.com/external-bearicons-detailed-outline-bearicons/64/000000/external-login-call-to-action-bearicons-detailed-outline-bearicons-1.png"
-            alt=""
-          />
+          <div className='home-link-cont'>
+            <img
+              src="https://img.icons8.com/external-bearicons-detailed-outline-bearicons/64/000000/external-login-call-to-action-bearicons-detailed-outline-bearicons-1.png"
+              alt=""
+            />
+            <p>Log In</p>
+          </div>
         </NavLink>
+       
       </>
     );
   }
@@ -44,12 +51,15 @@ function Navigation({ isLoaded }) {
               <div className="head-sec">
                 <div className="links-left">
                   <NavLink className="home-link" exact to="/">
-                    <img
-                      src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-house-hygiene-kiranshastry-lineal-kiranshastry.png"
-                      alt=""
-                    />
+                    <div className='home-link-cont'>
+                      <img
+                        src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-house-hygiene-kiranshastry-lineal-kiranshastry.png"
+                        alt=""
+                        />
+                        <p>Home</p>
+                    </div>
                   </NavLink>
-                  <NavLink className="demo-btn" exact to="/"></NavLink>
+                  {/* <NavLink className="demo-btn" exact to="/"></NavLink> */}
                   {isLoaded && sessionLinks}
                 </div>
                 <div className="links-right">
