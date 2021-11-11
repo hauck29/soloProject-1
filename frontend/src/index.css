@@ -9,13 +9,9 @@ a {
 li {
     list-style-type: none;
 }
-button {
-    background-color: lightsteelblue;
-    border-radius: 50%;
-    width: 200px;
-}
+
 body {
-    background-color: lightsteelblue;
+    background-color: rgb(215, 215, 216);
 }
 form {
     width: 75%;

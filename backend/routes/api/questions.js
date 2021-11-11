@@ -7,7 +7,9 @@ const {handleValidationErrors} = require('../../utils/validation');
 
 //getting the questions list
 router.get('/', asyncHandler(async(req, res) => {
-    const questions = await Question.findAll();
+    const questions = await Question.findAll({
+        include: User
+    });
     return res.json(questions);
 }));
 
@@ -17,8 +19,7 @@ router.get('/', asyncHandler(async(req, res) => {
 router.post('/', requireAuth, handleValidationErrors,
     asyncHandler(async(req, res) => {
         const {ownerId, title, description} = req.body;
-        const {userName} = req.session.auth;
-        const newQ = await Question.create({userName: userName, title, description});
+        const newQ = await Question.create({ownerId, title, description});
         return res.json({newQ});
 }));
 
@@ -26,8 +27,9 @@ router.post('/', requireAuth, handleValidationErrors,
 router.put('/:id(\\d+)', requireAuth, handleValidationErrors,
     asyncHandler(async(req, res) => {
         const {title, description} = req.body;
-        const editQ = await Question.findByPk(req.params.id);
-        await editQ.update({title, description});
+        const editquestion = await Question.findByPk(req.params.id);
+        await editquestion.update({title, description});
+        const editQ = await Question.findByPk(req.params.id, {include: User});
         return res.json({editQ});
     }));
 

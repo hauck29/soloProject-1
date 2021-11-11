@@ -11,3 +11,7 @@ input {
 .question-submit-btn {
     background-color: slategray;
 }
+.add-question {
+    padding-left: 20px;
+    padding-bottom: 50px;
+}

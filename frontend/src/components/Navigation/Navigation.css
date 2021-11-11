@@ -1,39 +1,62 @@
 body {
     margin:0;
     padding:0;
-    }
+}
 
 .nav-head {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-size: 500px;
+  background-repeat: no-repeat;
 }
+.header-title {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: flex-end;
+    padding: 100px;
+}
+.header-title > p {
+    color: rgb(105, 105, 105);
+    font-size: small;
+}
+.header-pic > img {
+    width: 100%;
+    margin: 50px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
 .head-sec {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+.home-link-cont > p {
+  font-weight: bold;
+
 }
 .home-link {
   display: flex;
   justify-content: flex-end;
   font-size: small;
   height: 30px;
-  background-color: lightsteelblue;
   padding-right: 10px;
 }
 .signup-link {
   display: flex;
-  background-color: lightsteelblue;
   height: 30px;
   padding-right: 10px;
 }
 .login-link {
   display: flex;
-  background-color: lightsteelblue;
   height: 30px;
 }
 .navLinks {
-  font-size: small;
+  font-size: large;
+  color: rgb(105, 105, 105);
+  display: flex;
 }
 
 .prof-btn-div {
@@ -58,13 +81,15 @@ p {
   font-weight: 100;
   letter-spacing: 5px;
   padding-bottom: 20px;
+  color: rgb(105, 105, 105);
+
 }
 .header {
   width: 100%;
   padding: 60px 0;
   text-align: center;
-  background: lightsteelblue;
-  color: white;
+  color: rgb(105, 105, 105);
+
 }
 
 .banner-img {
@@ -92,12 +117,15 @@ p {
   align-items: flex-end;
 }
 button {
-    background-color: slategray;
+    background-color: rgb(124, 154, 184);
     width: 50px;
     display: flex;
     justify-content: center;
     font-size: x-small;
     border-radius: 5px;
+}
+button:hover {
+    background-color: white;
 }
 .ask-q-btn {
     margin-right: 20px;
@@ -111,4 +139,11 @@ button {
 .demo-btn {
     margin-left: 20px;
     width: 100px;
+}
+.add-q-btn {
+    display: flex;
+    justify-content: center;
+}
+.ask-a-q-btn {
+    width: 150px;
 }

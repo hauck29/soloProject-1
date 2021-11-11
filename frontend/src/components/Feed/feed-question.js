@@ -10,7 +10,11 @@ const FeedQuestion = ({ question }) => {
   const [toEditQuestion, setToEditQuestion] = useState(false);
   const [title, setTitle] = useState(question.title);
   const [description, setDescription] = useState(question.description);
-  const [userName, setUserName] = useState(question.userName);
+
+  const cancel = (e) => {
+    e.preventDefault();
+    setToEditQuestion(!toEditQuestion);
+}
 
   const handleDelete = (id) => {
     dispatch(removeQuestion(id));
@@ -20,7 +24,6 @@ const FeedQuestion = ({ question }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = {
-      userName: userName,
       id: question.id,
       title,
       description,
@@ -31,25 +34,26 @@ const FeedQuestion = ({ question }) => {
 
   return (
     <div className='feed-div' >
-      <h3>
-        <p>Question {question.id}</p>
-        {/* <p>Posted by {question.userName}</p> */}
-        {question.title}
+      <div className='q-box'>
+        <h3>{question.title}</h3>
         <p>{question.description}</p>
         <div className="q-opts">
           <button
             onClick={() => handleDelete(question.id)}
             type="submit"
             className="del-q-btn"
-          >
+            >
             Delete Question
           </button>
           <button
             onClick={() => setToEditQuestion(!toEditQuestion)}
             className="del-q-btn"
-          >
+            >
             Edit Question
           </button>
+        </div>
+        <div className='q-id'>
+          <p>Posted by {question.User.username}</p>
         </div>
         {toEditQuestion && (
           <form onSubmit={handleSubmit}>
@@ -66,9 +70,10 @@ const FeedQuestion = ({ question }) => {
             <button className="question-sumbit-btn" type="submit">
               Update Question
             </button>
+            <button className='cancel-btn' onClick={cancel}>Cancel</button>
           </form>
         )}
-      </h3>
+      </div>
     </div>
   );
 };

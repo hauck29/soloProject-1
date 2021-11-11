@@ -17,17 +17,17 @@ function Navigation({ isLoaded }) {
       <>
         <NavLink className="signup-link" to="/signup">
           {/* Signup Link */}
-          <div className='home-link-cont'>
+          <div className="home-link-cont">
             <img
               src="https://img.icons8.com/wired/64/000000/sign-up.png"
               alt=""
             />
             <p>Join</p>
-            </div>
+          </div>
         </NavLink>
         <NavLink className="login-link" to="/login">
           {/* Login Link */}
-          <div className='home-link-cont'>
+          <div className="home-link-cont">
             <img
               src="https://img.icons8.com/external-bearicons-detailed-outline-bearicons/64/000000/external-login-call-to-action-bearicons-detailed-outline-bearicons-1.png"
               alt=""
@@ -35,7 +35,6 @@ function Navigation({ isLoaded }) {
             <p>Log In</p>
           </div>
         </NavLink>
-       
       </>
     );
   }
@@ -43,27 +42,24 @@ function Navigation({ isLoaded }) {
   return (
     <ul>
       <li>
-        <section className="header">
-          <div className="nav-head">
-            <div className="navLinks">
-              <h1>CuriousCat</h1>
-              <p>Answering Life's Meaningless Questions</p>
-              <div className="head-sec">
-                <div className="links-left">
-                  <NavLink className="home-link" exact to="/">
-                    <div className='home-link-cont'>
-                      <img
-                        src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-house-hygiene-kiranshastry-lineal-kiranshastry.png"
-                        alt=""
-                        />
-                        <p>Home</p>
-                    </div>
-                  </NavLink>
-                  {/* <NavLink className="demo-btn" exact to="/"></NavLink> */}
-                  {isLoaded && sessionLinks}
+        <div className="banner-img">
+          {/* Cat Banner */}
+
+          <div className="head-sec">
+            <div className="links-left">
+              <NavLink className="home-link" exact to="/">
+                <div className="home-link-cont">
+                  <img
+                    src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-house-hygiene-kiranshastry-lineal-kiranshastry.png"
+                    alt=""
+                  />
+                  <p>Home</p>
                 </div>
-                <div className="links-right">
-                  {/* <div className="header-search-bar">
+              </NavLink>
+              {isLoaded && sessionLinks}
+            </div>
+            <div className="links-right">
+              {/* <div className="header-search-bar">
                     <img
                       className="search-icon"
                       src="https://img.icons8.com/fluency-systems-regular/48/000000/search--v1.png"
@@ -71,21 +67,30 @@ function Navigation({ isLoaded }) {
                     />
                     <input type="text" placeholder="Search CuriousCat" />
                   </div> */}
-                  <div className="add-q-btn">
-                    <button
-                      onClick={() => history.push("/newQuestion")}
-                      className="ask-q-btn"
-                      type="submit"
-                    >
-                      Ask a Question
-                    </button>
-                  </div>
-                </div>
+            </div>
+          </div>
+        </div>
+        <section className="header">
+          <div className="nav-head">
+            <div className="navLinks">
+              <div className="header-pic">
+                <img src="https://zeezoey.com/blog/wp-content/uploads/2015/01/question-day.jpg" />
+              </div>
+              <div className="header-title">
+                <p>welcome to</p>
+                <h1>curiousCat</h1>
+                <p>asking and answering life's meaningless questions</p>
               </div>
             </div>
           </div>
-          <div className="banner-img">{/* Cat Banner */}</div>
         </section>
+        <div className="add-q-btn">
+          <button
+            onClick={() => history.push("/newQuestion")}
+            type="submit" className='ask-a-q-btn'>
+            Ask a Question
+          </button>
+        </div>
       </li>
     </ul>
   );

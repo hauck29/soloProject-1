@@ -10,6 +10,11 @@ const EditQuestion = () => {
     const history = useHistory();
     const dispatch = useDispatch();
 
+    const cancel = (e) => {
+        e.preventDefault();
+        history.push('/');
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const payload = {
@@ -40,6 +45,7 @@ const EditQuestion = () => {
                 <button className='question-sumbit-btn' type='submit'>
                     Update Question
                 </button>
+                <button className='cancel-btn' onClick={cancel}>Cancel</button>
             </form>
         </div>
     );
