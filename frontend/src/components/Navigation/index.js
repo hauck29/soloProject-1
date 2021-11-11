@@ -11,7 +11,22 @@ function Navigation({ isLoaded }) {
   const history = useHistory();
   let sessionLinks;
   if (sessionUser) {
-    sessionLinks = <ProfileButton user={sessionUser} />;
+    sessionLinks = (
+      <>
+        <div className="logged-in-opts">
+          <ProfileButton user={sessionUser} />
+          <div className="add-q-btn">
+            <button
+              onClick={() => history.push("/newQuestion")}
+              type="submit"
+              className="ask-a-q-btn"
+            >
+              Ask a Question
+            </button>
+          </div>
+        </div>
+      </>
+    );
   } else {
     sessionLinks = (
       <>
@@ -84,13 +99,6 @@ function Navigation({ isLoaded }) {
             </div>
           </div>
         </section>
-        <div className="add-q-btn">
-          <button
-            onClick={() => history.push("/newQuestion")}
-            type="submit" className='ask-a-q-btn'>
-            Ask a Question
-          </button>
-        </div>
       </li>
     </ul>
   );

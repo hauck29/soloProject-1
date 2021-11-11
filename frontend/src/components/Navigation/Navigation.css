@@ -128,7 +128,7 @@ button:hover {
     background-color: white;
 }
 .ask-q-btn {
-    margin-right: 20px;
+    margin-left: 20px;
 }
 .home-link-cont {
     display: flex;
@@ -146,4 +146,8 @@ button:hover {
 }
 .ask-a-q-btn {
     width: 150px;
+}
+.logged-in-opts {
+    display: flex;
+    justify-content: flex-end;
 }
