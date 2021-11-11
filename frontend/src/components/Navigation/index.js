@@ -53,14 +53,14 @@ function Navigation({ isLoaded }) {
                   {isLoaded && sessionLinks}
                 </div>
                 <div className="links-right">
-                  <div className="header-search-bar">
+                  {/* <div className="header-search-bar">
                     <img
                       className="search-icon"
                       src="https://img.icons8.com/fluency-systems-regular/48/000000/search--v1.png"
                       alt=""
                     />
                     <input type="text" placeholder="Search CuriousCat" />
-                  </div>
+                  </div> */}
                   <div className="add-q-btn">
                     <button
                       onClick={() => history.push("/newQuestion")}
