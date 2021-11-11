@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
 import "./feed.css";
 import { getQuestions, removeQuestion } from "../../store/questions";
 import { useHistory } from "react-router";
@@ -17,14 +16,14 @@ const Questions = () => {
 
   const handleDelete = (id) => {
     dispatch(removeQuestion(id));
-    history.push('/');
+    history.push("/");
   };
 
   return (
     <div>
       <div className="questions">
         {questions?.map((question) => (
-          <FeedQuestion question={question}/>
+          <FeedQuestion question={question} />
         ))}
       </div>
     </div>
