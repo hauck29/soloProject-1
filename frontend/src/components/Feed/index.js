@@ -14,10 +14,10 @@ const Questions = () => {
     dispatch(getQuestions());
   }, [dispatch]);
 
-  const handleDelete = (id) => {
-    dispatch(removeQuestion(id));
-    history.push("/");
-  };
+  // const handleDelete = (id) => {
+  //   dispatch(removeQuestion(id));
+  //   history.push("/");
+  // };
 
   return (
     <div>

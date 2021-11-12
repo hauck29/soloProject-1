@@ -15,7 +15,7 @@ router.get(
     const questionId = parseInt(req.params.id);
     const question = await Question.findByPk(questionId);
 
-    const questionAnswers = await Answer.findAll({
+    const answers = await Answer.findAll({
       where: { questionId: questionId },
     }).then((res) => {
       return res.map((row) => {
@@ -24,7 +24,7 @@ router.get(
     });
 
     console.log("get answers route");
-    res.json({ question, questionAnswers });
+    res.json({ question, answers });
   })
 );
 
