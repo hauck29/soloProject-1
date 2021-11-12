@@ -55,7 +55,7 @@ const FeedQuestion = ({ question }) => {
             </button>
           </div>
           <div className="q-id">
-            <p>Posted by {question.User.username}</p>
+            {/* <p>Posted by {question.User.username}</p> */}
           </div>
           {toEditQuestion && (
             <form onSubmit={handleSubmit}>
@@ -87,7 +87,7 @@ const FeedQuestion = ({ question }) => {
           <h3>{question.title}</h3>
           <p>{question.description}</p>
           <div className="q-opts">
-            
+
           </div>
           <div className="q-id">
             <p>Posted by {question.User.username}</p>
