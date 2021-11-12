@@ -53,12 +53,12 @@ const FeedQuestion = ({ question }) => {
             >
               Edit Question
             </button>
-            <button
+            {/* <button
               // onClick={() => setToEditQuestion(!toEditQuestion)}
               className="ans-q-btn"
             >
               Answer Question
-            </button>
+            </button> */}
           </div>
           <div className="answer-q">
           </div>
