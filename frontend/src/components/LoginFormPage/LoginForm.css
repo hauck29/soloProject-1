@@ -35,3 +35,6 @@ p{
     align-items: flex-end;
     color: rgb(91, 91, 91);
 }
+.cancel-btn {
+    margin-left: 20px;
+}

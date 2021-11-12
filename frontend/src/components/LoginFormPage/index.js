@@ -3,9 +3,11 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './LoginForm.css';
+import { useHistory } from 'react-router';
 
 function LoginFormPage() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
@@ -14,6 +16,11 @@ function LoginFormPage() {
   if (sessionUser) return (
     <Redirect to="/" />
   );
+
+  const cancel = (e) => {
+    e.preventDefault();
+    history.push('/');
+}
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,7 +75,7 @@ function LoginFormPage() {
           <button className='login-btn' type="submit">Log In</button>
           <button onClick={() => {setCredential('Demo-lition')
             setPassword('password')}} className='demo-btn' >Demo User Login</button>
-
+          <button className='cancel-btn' onClick={cancel}>Cancel</button>
         </div>
     </form>
 

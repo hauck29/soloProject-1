@@ -5,10 +5,17 @@
 }
 form {
     width: 75%;
+    margin-bottom: 50px;
 }
 input {
     background-color: lightsteelblue;
 }
 label {
     padding: 20px;
+}
+.signup-form-btns {
+    display: flex;
+}
+.signup-btn {
+    margin-right: 10px;
 }

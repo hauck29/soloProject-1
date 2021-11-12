@@ -45,10 +45,12 @@ const CreateQuestion = () => {
                     value={description}
                     placeholder='What is your question?'
                 />
-                <button className='question-sumbit-btn' type='submit'>
-                    Add Question
-                </button>
-                <button className='cancel-btn' onClick={cancel}>Cancel</button>
+                <div className='add-q-btns'>
+                    <button className='question-sumbit-btn' type='submit'>
+                        Add Question
+                    </button>
+                    <button className='cancel-btn' onClick={cancel}>Cancel</button>
+                </div>
             </form>
         </div>
     );

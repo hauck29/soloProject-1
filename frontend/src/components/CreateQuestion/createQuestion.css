@@ -2,7 +2,9 @@ form {
     display: flex;
     flex-direction: column;
 }
-
+form > input {
+    width: 50%;
+}
 input {
     border-radius: 5px;
     padding: 5px;
@@ -14,4 +16,8 @@ input {
 .add-question {
     padding-left: 20px;
     padding-bottom: 50px;
+}
+.add-q-btns {
+    display: flex;
+    margin-top: 10px;
 }
