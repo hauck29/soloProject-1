@@ -15,6 +15,7 @@ p {
     border-radius: 5px;
     margin-bottom: 20px;
     box-shadow: 3px;
+    align-items: center;
 
 }
 .feed-div:hover {
@@ -29,5 +30,8 @@ p {
     padding-left: 25px;
 }
 .ans-q-btn {
-    margin-left: 425px;
+    margin-left: 225px;
+}
+.q-box {
+    position: relative;
 }

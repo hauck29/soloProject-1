@@ -4,13 +4,19 @@ const GET_A_QUESTION = "answers/setQuestion";
 const ADD_AN_ANSWER = "answers/addAnswer";
 const EDIT_AN_ANSWER = "answers/editAnswer";
 const REMOVE_AN_ANSWER = "answers/delete";
+const SET_Q_ANSWERS = 'answers'
 
-const getAQuestion = (question) => {
+const getAQuestion = (payload) => {
   return {
     type: GET_A_QUESTION,
-    payload: question,
+    payload
   };
 };
+
+const setQAnswers = (payload) => ({
+  type: SET_Q_ANSWERS,
+  payload
+})
 
 const addAnAnswer = (payload) => {
   return {
@@ -34,13 +40,21 @@ const removeAnAnswer = (id) => {
 };
 
 export const getQuestion = (id) => async (dispatch) => {
-  const response = await csrfFetch(`/api/questions/${id}`);
-  if (response.ok) {
-    const data = await response.json();
-    dispatch(getAQuestion(data));
-    return data;
+  const res = await csrfFetch(`/api/questions/${id}`);
+  if (res.ok) {
+    const question = await res.json();
+    dispatch(getAQuestion(question));
+    // return question;
   }
 };
+
+export const setAnswers = (id) => async(dispatch) => {
+  const res = await csrfFetch(`/api/questions/${id}/answers`);
+  if(res.ok) {
+    const answers = await res.json();
+    dispatch(setQAnswers(answers));
+  }
+}
 
 export const addAnswer = (answer) => async (dispatch) => {
   const res = await csrfFetch("/api/questions/:id", {
@@ -78,7 +92,7 @@ const answerReducer = (state = {}, action) => {
   let newState = {};
   switch (action.type) {
     case GET_A_QUESTION:
-      action.payload((answer) => (newState[answer.id] = answer));
+      action.payload((question) => (newState[question.id] = question));
       return newState;
     case ADD_AN_ANSWER:
       newState = { ...state, [action.payload.id]: action.payload };

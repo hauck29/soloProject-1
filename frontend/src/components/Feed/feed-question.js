@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./feed.css";
 import { removeQuestion, editQuestion } from "../../store/questions";
 import { useHistory } from "react-router";
+import Answers from "../AnswersFeed";
 
 const FeedQuestion = ({ question }) => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -54,7 +55,8 @@ const FeedQuestion = ({ question }) => {
               Edit Question
             </button>
             {/* <button
-              // onClick={() => setToEditQuestion(!toEditQuestion)}
+              onClick={() => history.push('/newAnswer')}
+              type='submit'
               className="ans-q-btn"
             >
               Answer Question
@@ -66,6 +68,9 @@ const FeedQuestion = ({ question }) => {
             {/* optional chaining (?) resolved the issue of hanging when creating new question */}
             <p>Posted by {question?.User?.username}</p>
           </div>
+
+          <Answers />
+
           {toEditQuestion && (
             <form onSubmit={handleEditSubmit}>
               <input
@@ -97,7 +102,7 @@ const FeedQuestion = ({ question }) => {
           <p>{question.description}</p>
           <div className="q-opts"></div>
           <div className="q-id">
-            <p>Posted by {question.User.username}</p>
+            <p>Posted by {question?.User?.username}</p>
           </div>
         </div>
       </div>

@@ -37,6 +37,7 @@ const CreateQuestion = () => {
     return (
         <div className='add-question'>
             <h3>Add A Question</h3>
+            <p>***You must enter values for both fields for your question to post!***</p>
             <form onSubmit={handleSubmit} >
                 <input
                     onChange={(e) => setTitle(e.target.value)}

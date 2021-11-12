@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { addAnswer } from '../../store/answers';
-import "./CreateAnswer.css";
+import './CreateAnswer.css';
 
 const CreateAnswer = () => {
 
@@ -39,8 +39,8 @@ const CreateAnswer = () => {
             <form onSubmit={handleSubmit} >
 
                 <input
-                    // onChange={(e) => setDescription(e.target.value)}
-                    // value={description}
+                    onChange={(e) => setAnswer(e.target.value)}
+                    value={answer}
                     placeholder='Enter your answer here'
                 />
                 <div className='add-a-btns'>

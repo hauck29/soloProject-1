@@ -4,6 +4,20 @@ const { User, Question } = require("../../db/models");
 const router = express.Router();
 const { requireAuth } = require("../../utils/auth");
 const { handleValidationErrors } = require("../../utils/validation");
+const { check, validationResult } = require('express-validator');
+
+
+const validateQuestion = [
+  check('title')
+    .not().isEmpty()
+    .withMessage('You must enter a title for the question'),
+
+  check('description')
+    .not().isEmpty()
+    .withMessage('You must enter a description for the question'),
+
+  handleValidationErrors
+];
 
 //getting the questions list
 router.get(
@@ -16,10 +30,17 @@ router.get(
   })
 );
 
+//query for finding one question, by id
+router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
+  const question = await Question.findByPk(req.params.id)
+  return res.json({question});
+}));
+
 //posting a new question to the feed
 router.post(
   "/",
   requireAuth,
+  validateQuestion,
   handleValidationErrors,
   asyncHandler(async (req, res) => {
     const { ownerId, title, description } = req.body;

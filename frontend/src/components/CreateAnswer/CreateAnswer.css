@@ -1,0 +1,27 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+.add-answer {
+    margin-left: 50px;
+    padding-bottom: 50px;
+}
+.add-a-btns {
+    display: flex;
+    margin-top: 10px;
+}
+/*
+
+input {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+.question-submit-btn {
+    background-color: slategray;
+}
+.add-question {
+    padding-left: 20px;
+    padding-bottom: 50px;
+}
+ */

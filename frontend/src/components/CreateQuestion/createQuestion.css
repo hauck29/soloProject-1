@@ -12,7 +12,7 @@ input {
     background-color: slategray;
 }
 .add-question {
-    padding-left: 20px;
+    margin-left: 50px;
     padding-bottom: 50px;
 }
 .add-q-btns {
