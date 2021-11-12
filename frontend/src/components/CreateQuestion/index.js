@@ -28,7 +28,7 @@ const CreateQuestion = () => {
         };
         dispatch(addQuestion(payload));
 
-        history.push('/');
+        setTimeout(() => {history.push('/')}, 500);
     };
 
     return (

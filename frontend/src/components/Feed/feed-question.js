@@ -4,6 +4,7 @@ import "./feed.css";
 import { removeQuestion, editQuestion } from "../../store/questions";
 import { useHistory } from "react-router";
 
+
 const FeedQuestion = ({ question }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const FeedQuestion = ({ question }) => {
     history.push("/");
   };
 
-  const handleSubmit = (e) => {
+  const handleEditSubmit = (e) => {
     e.preventDefault();
     const payload = {
       id: question.id,
@@ -58,7 +59,7 @@ const FeedQuestion = ({ question }) => {
             {/* <p>Posted by {question.User.username}</p> */}
           </div>
           {toEditQuestion && (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleEditSubmit}>
               <input
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
@@ -80,19 +81,16 @@ const FeedQuestion = ({ question }) => {
         </div>
       </div>
     );
-  }else {
+  } else {
     return (
       <div className="feed-div">
         <div className="q-box">
           <h3>{question.title}</h3>
           <p>{question.description}</p>
-          <div className="q-opts">
-
-          </div>
+          <div className="q-opts"></div>
           <div className="q-id">
             <p>Posted by {question.User.username}</p>
           </div>
-
         </div>
       </div>
     );

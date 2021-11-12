@@ -2,9 +2,7 @@ form {
     display: flex;
     flex-direction: column;
 }
-form > input {
-    width: 50%;
-}
+
 input {
     border-radius: 5px;
     padding: 5px;
