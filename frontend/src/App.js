@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import Questions from "./components/Feed";
 import CreateQuestion from "./components/CreateQuestion";
 import EditQuestion from "./components/EditQuestion";
+import CreateAnswer from "./components/CreateAnswer";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route path='/editQuestion'>
             <EditQuestion />
+          </Route>
+          <Route path='/newAnswer'>
+            <CreateAnswer />
           </Route>
         </Switch>
       )}

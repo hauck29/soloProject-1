@@ -4,7 +4,6 @@ import "./feed.css";
 import { removeQuestion, editQuestion } from "../../store/questions";
 import { useHistory } from "react-router";
 
-
 const FeedQuestion = ({ question }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
@@ -54,9 +53,18 @@ const FeedQuestion = ({ question }) => {
             >
               Edit Question
             </button>
+            <button
+              // onClick={() => setToEditQuestion(!toEditQuestion)}
+              className="ans-q-btn"
+            >
+              Answer Question
+            </button>
+          </div>
+          <div className="answer-q">
           </div>
           <div className="q-id">
-            {/* <p>Posted by {question.User.username}</p> */}
+            {/* optional chaining (?) resolved the issue of hanging when creating new question */}
+            <p>Posted by {question?.User?.username}</p>
           </div>
           {toEditQuestion && (
             <form onSubmit={handleEditSubmit}>

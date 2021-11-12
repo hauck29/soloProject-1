@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { addQuestion } from '../../store/questions';
-import "./createQuestion.css";
+import "./CreateQuestion.css";
 
 const CreateQuestion = () => {
     // const [userName, setUserName] = useState('');
@@ -28,7 +28,10 @@ const CreateQuestion = () => {
         };
         dispatch(addQuestion(payload));
 
-        setTimeout(() => {history.push('/')}, 500);
+        //this setTimeout allows 250 ms of time before the redirect
+        //so the username has time to be pulled from a nested object
+        //in CreateQuestion/index.js
+        setTimeout(() => {history.push('/')}, 250);
     };
 
     return (
