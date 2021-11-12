@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./feed.css";
 import { removeQuestion, editQuestion } from "../../store/questions";
 import { useHistory } from "react-router";
 
 const FeedQuestion = ({ question }) => {
+  const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const history = useHistory();
   const [toEditQuestion, setToEditQuestion] = useState(false);
@@ -14,7 +15,7 @@ const FeedQuestion = ({ question }) => {
   const cancel = (e) => {
     e.preventDefault();
     setToEditQuestion(!toEditQuestion);
-}
+  };
 
   const handleDelete = (id) => {
     dispatch(removeQuestion(id));
@@ -32,50 +33,70 @@ const FeedQuestion = ({ question }) => {
     setToEditQuestion(!toEditQuestion);
   };
 
-  return (
-    <div className='feed-div' >
-      <div className='q-box'>
-        <h3>{question.title}</h3>
-        <p>{question.description}</p>
-        <div className="q-opts">
-          <button
-            onClick={() => handleDelete(question.id)}
-            type="submit"
-            className="del-q-btn"
+  if (sessionUser) {
+    return (
+      <div className="feed-div">
+        <div className="q-box">
+          <h3>{question.title}</h3>
+          <p>{question.description}</p>
+          <div className="q-opts">
+            <button
+              onClick={() => handleDelete(question.id)}
+              type="submit"
+              className="del-q-btn"
             >
-            Delete Question
-          </button>
-          <button
-            onClick={() => setToEditQuestion(!toEditQuestion)}
-            className="del-q-btn"
-            >
-            Edit Question
-          </button>
-        </div>
-        <div className='q-id'>
-          <p>Posted by {question.User.username}</p>
-        </div>
-        {toEditQuestion && (
-          <form onSubmit={handleSubmit}>
-            <input
-              onChange={(e) => setTitle(e.target.value)}
-              value={title}
-              placeholder="Question Title"
-            />
-            <input
-              onChange={(e) => setDescription(e.target.value)}
-              value={description}
-              placeholder="What is your question?"
-            />
-            <button className="question-sumbit-btn" type="submit">
-              Update Question
+              Delete Question
             </button>
-            <button className='cancel-btn' onClick={cancel}>Cancel</button>
-          </form>
-        )}
+            <button
+              onClick={() => setToEditQuestion(!toEditQuestion)}
+              className="del-q-btn"
+            >
+              Edit Question
+            </button>
+          </div>
+          <div className="q-id">
+            <p>Posted by {question.User.username}</p>
+          </div>
+          {toEditQuestion && (
+            <form onSubmit={handleSubmit}>
+              <input
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}
+                placeholder="Question Title"
+              />
+              <input
+                onChange={(e) => setDescription(e.target.value)}
+                value={description}
+                placeholder="What is your question?"
+              />
+              <button className="question-sumbit-btn" type="submit">
+                Update Question
+              </button>
+              <button className="cancel-btn" onClick={cancel}>
+                Cancel
+              </button>
+            </form>
+          )}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }else {
+    return (
+      <div className="feed-div">
+        <div className="q-box">
+          <h3>{question.title}</h3>
+          <p>{question.description}</p>
+          <div className="q-opts">
+            
+          </div>
+          <div className="q-id">
+            <p>Posted by {question.User.username}</p>
+          </div>
+
+        </div>
+      </div>
+    );
+  }
 };
 
 export default FeedQuestion;
