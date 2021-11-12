@@ -53,6 +53,7 @@ router.post(
 router.put(
   "/:id(\\d+)",
   requireAuth,
+  validateQuestion,
   handleValidationErrors,
   asyncHandler(async (req, res) => {
     const { title, description } = req.body;
