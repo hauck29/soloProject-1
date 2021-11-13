@@ -54,13 +54,13 @@ const FeedQuestion = ({ question }) => {
             >
               Edit Question
             </button>
-            <button
+            {/* <button
               onClick={() => history.push(`/questions/${question.id}/answer/new`)}
               type='submit'
               className="ans-q-btn"
             >
               Answer Question
-            </button>
+            </button> */}
           </div>
           <div className="answer-q">
           </div>
