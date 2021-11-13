@@ -13,6 +13,9 @@ const FeedQuestion = ({ question }) => {
   const [title, setTitle] = useState(question.title);
   const [description, setDescription] = useState(question.description);
 
+  const answers = useSelector((state) => Object.values(state.answer));
+
+
   const cancel = (e) => {
     e.preventDefault();
     setToEditQuestion(!toEditQuestion);
@@ -66,7 +69,7 @@ const FeedQuestion = ({ question }) => {
           </div>
           <div className="q-id">
             {/* optional chaining (?) resolved the issue of hanging when creating new question */}
-            <p>Posted by {question?.User?.username}</p>
+            <p>Question Posted by {question?.User?.username}</p>
           </div>
 {/* map over and make answer card. useSelector to look through answers in current state */}
          {/* can suse question.id from props and match with question Id for each answer */}
@@ -107,7 +110,7 @@ const FeedQuestion = ({ question }) => {
           <p>{question.description}</p>
           <div className="q-opts"></div>
           <div className="q-id">
-            <p>Posted by {question?.User?.username}</p>
+            <p> Question Posted by {question?.User?.username}</p>
           </div>
         </div>
       </div>

@@ -24,7 +24,7 @@ const Answers = ({answer}) => {
     <div>
       <div className="answers">
 
-          <p>This is where the answers should render</p>
+          <p>This is where the answers should render. Component in feed-question.js</p>
       </div>
     </div>
   );

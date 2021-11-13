@@ -1,17 +1,11 @@
 import { csrfFetch } from "./csrf";
 
-const GET_A_QUESTION = "answers/setQuestion";
 const ADD_AN_ANSWER = "answers/addAnswer";
 const EDIT_AN_ANSWER = "answers/editAnswer";
 const REMOVE_AN_ANSWER = "answers/delete";
 const SET_Q_ANSWERS = 'answers'
 
-// const getAQuestion = (payload) => {
-//   return {
-//     type: GET_A_QUESTION,
-//     payload
-//   };
-// };
+
 
 const setQAnswers = (payload) => ({
   type: SET_Q_ANSWERS,
@@ -39,14 +33,6 @@ const removeAnAnswer = (id) => {
   };
 };
 
-// export const getQuestion = (id) => async (dispatch) => {
-//   const res = await csrfFetch(`/api/questions/${id}`);
-//   if (res.ok) {
-//     const question = await res.json();
-//     dispatch(getAQuestion(question));
-//     // return question;
-//   }
-// };
 
 export const setAnswers = (id) => async(dispatch) => {
   console.log(id);

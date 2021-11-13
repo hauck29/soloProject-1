@@ -32,15 +32,15 @@ app.use(
 // Set the _csrf token and create req.csrfToken method
 
 // COMMENTED OUT to circumvent csrf on postman
-app.use(
-  csurf({
-    cookie: {
-        secure: isProduction,
-        sameSite: isProduction && "Lax",
-        httpOnly: true,
-    },
-})
-);
+// app.use(
+//   csurf({
+//     cookie: {
+//         secure: isProduction,
+//         sameSite: isProduction && "Lax",
+//         httpOnly: true,
+//     },
+// })
+// );
 
 
 app.use(routes); // Connect all the routes
