@@ -37,7 +37,7 @@ function App() {
           <Route path='/editQuestion'>
             <EditQuestion />
           </Route>
-          <Route path='/newAnswer'>
+          <Route path='/questions/:questionId/answer/new'>
             <CreateAnswer />
           </Route>
         </Switch>

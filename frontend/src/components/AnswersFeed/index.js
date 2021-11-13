@@ -7,13 +7,13 @@ import { useHistory } from "react-router";
 import { setAnswers } from "../../store/answers";
 // import FeedQuestion from "./Feed/feed-question";
 
-const Answers = (question) => {
+const Answers = ({answer}) => {
   const dispatch = useDispatch();
   const history = useHistory();
 //   const answers = useSelector((state) => Object.values(state.answer));
-  useEffect(() => {
-    dispatch(setAnswers());
-  }, [dispatch]);
+//   useEffect(() => {
+//     dispatch(setAnswers(answer.id));
+//   }, [dispatch]);
 
   // const handleDelete = (id) => {
   //   dispatch(removeQuestion(id));
@@ -23,9 +23,7 @@ const Answers = (question) => {
   return (
     <div>
       <div className="answers">
-        {/* {answers?.map((answer) => (
-          <Answers answer={answer} />
-          ))} */}
+
           <p>This is where the answers should render</p>
       </div>
     </div>

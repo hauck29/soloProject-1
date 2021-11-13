@@ -12,7 +12,7 @@ const { handleValidationErrors } = require("../../utils/validation");
 router.get(
   "/:id(\\d+)",
   asyncHandler(async (req, res, next) => {
-    const questionId = parseInt(req.params.id);
+    const questionId = parseInt(req.params.id, 10);
     const question = await Question.findByPk(questionId);
 
     const answers = await Answer.findAll({
@@ -30,11 +30,13 @@ router.get(
 
 //post a new answer to a question
 router.post(
-  "/",
+  "/:id(\\d+)",
   requireAuth,
   handleValidationErrors,
   asyncHandler(async (req, res) => {
-    const { userId, questionId, answer } = req.body;
+    const { userId, answer } = req.body;
+    const questionId = parseInt(req.params.id, 10);
+
     const newA = await Answer.create({ userId, questionId, answer });
     return res.json({ newA });
   })

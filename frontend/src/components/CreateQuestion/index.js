@@ -12,6 +12,7 @@ const CreateQuestion = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
+    const [errors, setErrors] = useState([]);
 
     const cancel = (e) => {
         e.preventDefault();
@@ -19,8 +20,18 @@ const CreateQuestion = () => {
     }
 
 
+
+    
+
+
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        if(title.length < 1 || description.length < 1) {
+            setErrors(['Both fields must have values']);
+            return errors;
+        }
         const payload = {
             ownerId: user.id,
             title,

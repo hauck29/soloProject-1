@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./feed.css";
 import { removeQuestion, editQuestion } from "../../store/questions";
 import { useHistory } from "react-router";
-import Answers from "../AnswersFeed";
+import Answers from "../AnswersFeed/index";
 
 const FeedQuestion = ({ question }) => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -54,13 +54,13 @@ const FeedQuestion = ({ question }) => {
             >
               Edit Question
             </button>
-            {/* <button
-              onClick={() => history.push('/newAnswer')}
+            <button
+              onClick={() => history.push(`/questions/${question.id}/answer/new`)}
               type='submit'
               className="ans-q-btn"
             >
               Answer Question
-            </button> */}
+            </button>
           </div>
           <div className="answer-q">
           </div>
@@ -68,8 +68,13 @@ const FeedQuestion = ({ question }) => {
             {/* optional chaining (?) resolved the issue of hanging when creating new question */}
             <p>Posted by {question?.User?.username}</p>
           </div>
+{/* map over and make answer card. useSelector to look through answers in current state */}
+         {/* can suse question.id from props and match with question Id for each answer */}
 
           <Answers />
+         {/* {answers?.map((answer) => (
+            <Answers answer={answer} />
+            ))} */}
 
           {toEditQuestion && (
             <form onSubmit={handleEditSubmit}>
