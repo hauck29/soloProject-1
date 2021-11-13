@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./feed.css";
 import { getQuestions, removeQuestion } from "../../store/questions";
+import { setAnswers } from "../../store/answers";
 import { useHistory } from "react-router";
 import FeedQuestion from "./feed-question";
+import Answers from "../AnswersFeed";
 
 const Questions = () => {
   const dispatch = useDispatch();

@@ -10,10 +10,10 @@ import { setAnswers } from "../../store/answers";
 const Answers = ({answer}) => {
   const dispatch = useDispatch();
   const history = useHistory();
-//   const answers = useSelector((state) => Object.values(state.answer));
-//   useEffect(() => {
-//     dispatch(setAnswers(answer.id));
-//   }, [dispatch]);
+  const answers = useSelector((state) => Object.values(state.answer));
+  useEffect(() => {
+    dispatch(setAnswers(answer));
+  }, [dispatch]);
 
   // const handleDelete = (id) => {
   //   dispatch(removeQuestion(id));
