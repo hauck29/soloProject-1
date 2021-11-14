@@ -40,7 +40,7 @@ I would like to extend a warm thank you to Ryan Maloney, Bill Adams, Ash Tucker 
 The discussions we had to clear concepts were enlightening and pivotal.
 
 # Features
--Sign up/Login with credentials
+*Sign up/Login with credentials
 -Add, edit and remove questions from the questions feed
 -Add, edit and remove answers from the answers feed of a particular question
 
