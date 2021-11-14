@@ -1,10 +1,10 @@
 # Welcome to curiousCat's readme!
 
-curiousCat is a web application for asking and answering questions. It was inspired by Quora and built using Javascript, React.js, Redux and Express.
+>curiousCat is a web application for asking and answering questions. It was inspired by Quora and built using Javascript, React.js, Redux and Express.
 
 # Installation
 
-Clone the assessment repository from https://github.com/hauck29/soloProject-1.git
+>Clone the assessment repository from https://github.com/hauck29/soloProject-1.git
 
 Rename the folder to whatever you want.
 
@@ -12,14 +12,14 @@ Rename the folder to whatever you want.
 `cd` into the `frontend` folder and `npm install` to install node package manager dependencies.
 
 # Running Locally
-To start the server, run `npm start` from both the `frontend` and `backend` directories. This will allow you to make requests to http://localhost:3000 using any client (browser and Postman).
+>To start the server, run `npm start` from both the `frontend` and `backend` directories. This will allow you to make requests to http://localhost:3000 using any client (browser and Postman).
 To stop the server from listening to requests, press CTRL + c for Windows/Linux or CMD + c for MacOS in the terminal that you started the server (wherever you ran npm start).
 
 # Running Live
-The live link for this project is located here: https://cc-4.herokuapp.com/
+>The live link for this project is located here: https://cc-4.herokuapp.com/
 
 # What You Can Do
-Your objective is to test the functionality of all features, buttons and links.
+>Your objective is to test the functionality of all features, buttons and links.
 
 You can log in as a demo user with the `Demo User Login` button on the login form.
 You can log in as a user of your choice, using the credentials you selected when creating an account.
@@ -30,7 +30,7 @@ You can delete questions with the `Delete Question` button.
 You can delete answers with the `Delete` button, located under the answer.
 
 # Technical Details
-This project was done during the week of November 8th - 14th, 2021.
+>This project was done during the week of November 8th - 14th, 2021.
 curiousCat displays questions and answers (on the same card) that users can ask and answer at their leisure.
 
 During compilation of this project, I required assistance with my backend routes to add and edit questions.
