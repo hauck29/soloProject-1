@@ -37,13 +37,12 @@ During compilation of this project, I required assistance with my backend routes
 I estimate that I personally completed 95% of this project, receiving assistance for the last 5%.
 
 I would like to extend a warm thank you to Ryan Maloney, Bill Adams, Ash Tucker and Alfredo Sugowara!
-The discussions we had to clear concepts were enlightening and pivotal.
+The discussions we had to clear concepts were enlightening aivotal.
 
 # Features
->
-  -Sign up/Login with credentials
-  -Add, edit and remove questions from the questions feed
-  -Add, edit and remove answers from the answers feed of a particular question
+Sign up/Login with credentials
+Add, edit and remove questions from the questions feed
+Add, edit and remove answers from the answers feed of a particular question
 
 # To-Do List
 -[] Like/unlike questions and answers
