@@ -39,6 +39,45 @@
 >Add, edit and remove questions from the questions feed
 >Add, edit and remove answers from the answers feed of a particular question
 
+# React Components
+>Navigation - The layout
+>SignUpFormPage - The form to sign up for an account
+>LoginFormPage - The form to log in
+>Feed (questions) - The questions feed, located below the navigation component
+>CreateQuestion - Used when creating a new question
+>EditQuestion - Used when editing an existing quesiton
+>AnswersFeed - The answers feed, located INSIDE the quesitons card
+>CreateAnswer - Used when creating a new answer to a question
+>EditAnswer - User when editing an existing answer
+
+# Front End Routes
+`<>
+      <Navigation isLoaded={isLoaded} />
+      {isLoaded && (
+        <Switch>
+          <Route path='/' exact>
+            <Questions />
+          </Route>
+          <Route path="/login">
+            <LoginFormPage />
+          </Route>
+          <Route path="/signup">
+            <SignupFormPage />
+          </Route>
+          <Route path='/newQuestion'>
+            <CreateQuestion />
+          </Route>
+          <Route path='/editQuestion'>
+            <EditQuestion />
+          </Route>
+          <Route path='/questions/:questionId/answer/new'>
+            <CreateAnswer />
+          </Route>
+
+        </Switch>
+      )}
+    </>`
+
 # To-Do List
 >Like/unlike questions and answers
 >Report questions or answers for offensiveness
