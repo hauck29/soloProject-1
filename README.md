@@ -37,7 +37,7 @@
 >I estimate that I personally completed 95% of this project, receiving assistance for the last 5%.
 
 >I would like to extend a warm thank you to Ryan Maloney, Bill Adams, Ash Tucker and Alfredo Sugowara!
->The discussions we had to clear concepts were enlightening aivotal.
+>The discussions we had to clear concepts were enlightening pivotal.
 
 # Features
 >Sign up/Login with credentials
