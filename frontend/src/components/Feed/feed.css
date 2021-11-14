@@ -11,13 +11,16 @@ p {
     width: 50%;
     justify-content: flex-start;
     margin-left: 100px;
-    /* border: 1px solid black; */
-    box-shadow: 0 0 10px black;
+    overflow: auto;
+    box-shadow: 0 0 20px;
     border-radius: 5px;
-    margin-bottom: 20px;
-    box-shadow: 3px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    border: 2px solid rgb(124, 154, 184);
     align-items: center;
     position: relative;
+    /* background-color: lightgray; */
+    backdrop-filter: blur(10px);
 
 }
 .feed-div:hover {
@@ -42,4 +45,12 @@ p {
 }
 .q-d {
     margin: 50px;
+}
+.questions {
+    width: 70%;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/002/266/241/original/cute-pink-and-light-blue-cat-kitten-cartoon-seamless-pattern-free-vector.jpg');
+    /* background-color: rgb(124, 154, 184); */
+    border: 2px solid rgb(124, 154, 184);
+    border-radius: 15px;
+    box-shadow: 0 0 20px;
 }

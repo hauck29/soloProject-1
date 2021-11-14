@@ -8,6 +8,8 @@ const EditQuestion = () => {
   const [description, setDescription] = useState("");
   const history = useHistory();
   const dispatch = useDispatch();
+  const [errors, setErrors] = useState([]);
+
 
   const cancel = (e) => {
     e.preventDefault();
@@ -15,6 +17,12 @@ const EditQuestion = () => {
   };
 
   const handleSubmit = (e) => {
+    if (title.length < 1 || description.length < 1) {
+      setErrors([
+        "You must enter in both a Title AND a Description for your question to be edited!",
+      ]);
+      return errors;
+    }
     e.preventDefault();
     const payload = {
       title,
@@ -28,6 +36,11 @@ const EditQuestion = () => {
   return (
     <div className="add-question">
       <h3>Edit Question</h3>
+      <ul>
+        {errors.map((error, idx) => (
+          <li key={idx}>{error}</li>
+        ))}
+      </ul>
       <form onSubmit={handleSubmit} className="add-question">
         <input
           onChange={(e) => setTitle(e.target.value)}

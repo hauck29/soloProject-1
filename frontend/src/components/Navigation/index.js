@@ -90,7 +90,7 @@ function Navigation({ isLoaded }) {
           <div className="nav-head">
             <div className="navLinks">
               <div className="header-pic">
-                <img src="https://zeezoey.com/blog/wp-content/uploads/2015/01/question-day.jpg" />
+                <img src="https://www.seekpng.com/png/detail/15-150625_kittens-clipart-blue-cat-blue-cat-cartoon-pinart.png" />
               </div>
               <div className="header-title">
                 <p>welcome to</p>
