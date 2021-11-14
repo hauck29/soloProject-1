@@ -11,8 +11,7 @@ const FeedQuestion = ({ question }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [toEditQuestion, setToEditQuestion] = useState(false);
-  const [editAnswer, setEditAnswer] = useState(false);
-  const [answer, setAnswer] = useState('');
+  // const [answer, setAnswer] = useState('');
   const [title, setTitle] = useState(question.title);
   const [description, setDescription] = useState(question.description);
 
@@ -26,14 +25,19 @@ const FeedQuestion = ({ question }) => {
     history.push("/");
   };
 
-  const handleEditASubmit = (e) => {
-    e.preventDefault();
-    const payload = {
-      id: answer.id
-    };
-    dispatch(editAnswer(payload));
-    setEditAnswer(!editAnswer);
-  };
+  // const handleAnsDelete = (answer) => {
+  //   dispatch(removeAnswer(answer));
+  //   history.push("/");
+  // };
+
+  // const handleEditASubmit = (e) => {
+  //   e.preventDefault();
+  //   const payload = {
+  //     id: answer.id
+  //   };
+  //   dispatch(editAnswer(payload));
+  //   setEditAnswer(!editAnswer);
+  // };
 
   const handleEditQSubmit = (e) => {
     e.preventDefault();
@@ -79,6 +83,7 @@ const FeedQuestion = ({ question }) => {
               >
               Answer Question
             </button>
+
           </div>
             <div>
               {toEditQuestion && (
