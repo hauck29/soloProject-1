@@ -51,32 +51,7 @@
 >EditAnswer - User when editing an existing answer
 
 # Front End Routes
-`<>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route path='/' exact>
-            <Questions />
-          </Route>
-          <Route path="/login">
-            <LoginFormPage />
-          </Route>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-          <Route path='/newQuestion'>
-            <CreateQuestion />
-          </Route>
-          <Route path='/editQuestion'>
-            <EditQuestion />
-          </Route>
-          <Route path='/questions/:questionId/answer/new'>
-            <CreateAnswer />
-          </Route>
 
-        </Switch>
-      )}
-    </>`
 
 # To-Do List
 >Like/unlike questions and answers
