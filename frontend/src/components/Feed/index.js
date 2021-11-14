@@ -1,12 +1,10 @@
 import { useEffect } from "react";
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./feed.css";
-import { getQuestions, removeQuestion } from "../../store/questions";
-import { setAnswers } from "../../store/answers";
+import { getQuestions } from "../../store/questions";
 import { useHistory } from "react-router";
 import FeedQuestion from "./feed-question";
-import Answers from "../AnswersFeed";
 
 const Questions = () => {
   const dispatch = useDispatch();
@@ -15,11 +13,6 @@ const Questions = () => {
   useEffect(() => {
     dispatch(getQuestions());
   }, [dispatch]);
-
-  // const handleDelete = (id) => {
-  //   dispatch(removeQuestion(id));
-  //   history.push("/");
-  // };
 
   return (
     <div>

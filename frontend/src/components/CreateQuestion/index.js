@@ -5,8 +5,6 @@ import { addQuestion } from "../../store/questions";
 import "./createQuestion.css";
 
 const CreateQuestion = () => {
-  // const [userName, setUserName] = useState('');
-  const [ownerId, setOwnerId] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const history = useHistory();
@@ -34,9 +32,6 @@ const CreateQuestion = () => {
     };
     dispatch(addQuestion(payload));
 
-    //this setTimeout allows 250 ms of time before the redirect
-    //so the username has time to be pulled from a nested object
-    //in CreateQuestion/index.js
     setTimeout(() => {
       history.push("/");
     }, 250);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
-import * as sessionActions from '../../store/session';
-import './ProfileButton.css';
+import { useDispatch } from "react-redux";
+import * as sessionActions from "../../store/session";
+import "./ProfileButton.css";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ function ProfileButton({ user }) {
       setShowMenu(false);
     };
 
-    document.addEventListener('click', closeMenu);
+    document.addEventListener("click", closeMenu);
 
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
@@ -31,20 +31,22 @@ function ProfileButton({ user }) {
 
   return (
     <>
-    <div className='prof-btn-div'>
-      <button className='profile-btn' onClick={openMenu}>
-        <i className="fas fa-cat" />
-      </button>
-      {showMenu && (
-        <ul className="profile-dropdown">
-          <li className='user-info'>{user.username}</li>
-          <li className='user-info'>{user.email}</li>
-          <li>
-            <button className='logout-btn' onClick={logout}>Log Out</button>
-          </li>
-        </ul>
-      )}
-    </div>
+      <div className="prof-btn-div">
+        <button className="profile-btn" onClick={openMenu}>
+          <i className="fas fa-cat" />
+        </button>
+        {showMenu && (
+          <ul className="profile-dropdown">
+            <li className="user-info">{user.username}</li>
+            <li className="user-info">{user.email}</li>
+            <li>
+              <button className="logout-btn" onClick={logout}>
+                Log Out
+              </button>
+            </li>
+          </ul>
+        )}
+      </div>
     </>
   );
 }

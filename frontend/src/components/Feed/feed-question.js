@@ -54,27 +54,28 @@ const FeedQuestion = ({ question }) => {
             >
               Edit Question
             </button>
-            {/* <button
-              onClick={() => history.push(`/questions/${question.id}/answer/new`)}
-              type='submit'
+            <button
+              onClick={() =>
+                history.push(`/questions/${question.id}/answer/new`)
+              }
+              type="submit"
               className="ans-q-btn"
             >
               Answer Question
-            </button> */}
+            </button>
           </div>
-          <div className="answer-q">
-          </div>
+          <div className="answer-q"></div>
           <div className="q-id">
             {/* optional chaining (?) resolved the issue of hanging when creating new question */}
             <p>Posted by {question?.User?.username}</p>
           </div>
-{/* map over and make answer card. useSelector to look through answers in current state */}
-         {/* can suse question.id from props and match with question Id for each answer */}
+          {/* map over and make answer card. useSelector to look through answers in current state */}
+          {/* can suse question.id from props and match with question Id for each answer */}
 
-          <Answers />
-         {/* {answers?.map((answer) => (
+          {/* <Answers /> */}
+          {question.Answers?.map((answer) => (
             <Answers answer={answer} />
-            ))} */}
+          ))}
 
           {toEditQuestion && (
             <form onSubmit={handleEditSubmit}>

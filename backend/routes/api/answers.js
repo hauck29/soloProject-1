@@ -25,7 +25,6 @@ router.get(
       });
     });
 
-    console.log("get answers route");
     res.json({ question, answers });
   })
 );
@@ -34,7 +33,7 @@ router.get(
 //post a new answer to a question
 router.post(
   "/:id(\\d+)",
-  // requireAuth,
+  requireAuth,
   handleValidationErrors,
   asyncHandler(async (req, res) => {
     const { userId, answer } = req.body;
@@ -48,7 +47,7 @@ router.post(
 //edit answer to a question
 router.put(
     "/:id(\\d+)",
-    // requireAuth,
+    requireAuth,
     handleValidationErrors,
     asyncHandler(async (req, res) => {
       const { answer } = req.body;
@@ -62,7 +61,7 @@ router.put(
 //deleting an answer from a question
 router.delete(
   "/:id(\\d+)",
-  // requireAuth,
+  requireAuth,
   handleValidationErrors,
   asyncHandler(async (req, res, next) => {
     const answer = await Answer.findByPk(req.params.id);
