@@ -27,10 +27,11 @@ You can log in as a user of your choice, using the credentials you selected when
 You can add questions with the `Add Question` button.
 You can answer questions with the `Answer Question` button.
 You can delete questions with the `Delete Question` button.
+You can delete answers with the `Delete` button, located under the answer.
 
 # Technical Details
-curiousCat displays questions and answers (on the same card) that users can ask and answer at their leisure.
 This project was done during the week of November 8th - 14th, 2021.
+curiousCat displays questions and answers (on the same card) that users can ask and answer at their leisure.
 
 During compilation of this project, I required assistance with my backend routes to add and edit questions.
 I estimate that I personally completed 95% of this project, receiving assistance for the last 5%.
