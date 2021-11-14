@@ -22,7 +22,6 @@ The live link for this project is located here: https://cc-4.herokuapp.com/
 Your objective is to test the functionality of all features, buttons and links.
 
 You can log in as a demo user with the `Demo User Login` button on the login form.
-![alt text](/Users/Tony/Desktop/Screen Shot 2021-11-14 at 8.14.08 AM.png)
 You can log in as a user of your choice, using the credentials you selected when creating an account.
 
 You can add questions with the `Add Question` button.
