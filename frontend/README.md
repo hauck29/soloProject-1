@@ -87,6 +87,15 @@
 >Create: ```
     router.post('/:id(\\d+))
     ```
+>Read: ```
+    router.post('/:id(\\d+))
+    ```
+>Update: ```
+    router.post('/:id(\\d+))
+    ```
+>Delete: ```
+    router.post('/:id(\\d+))
+    ```
 
 # To-Do List
 >Like/unlike questions and answers
