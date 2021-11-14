@@ -80,6 +80,14 @@
     </>
 ```
 
+# Back End Routes
+
+>-- Questions
+>-- Answers
+>Create: ```
+    router.post('/:id(\\d+))
+    ```
+
 # To-Do List
 >Like/unlike questions and answers
 >Report questions or answers for offensiveness
