@@ -8,13 +8,11 @@ const CreateAnswer = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const { questionId } = useParams();
 
-  // const [questionId, setQuestionId] = useState('');
   const [answer, setAnswer] = useState("");
   const history = useHistory();
   const dispatch = useDispatch();
   const [errors, setErrors] = useState([]);
 
-  // const user = useSelector(state => state.session.user);
 
   const cancel = (e) => {
     e.preventDefault();
@@ -36,7 +34,7 @@ const CreateAnswer = () => {
 
     setTimeout(() => {
       history.push("/");
-    }, 250);
+    }, 100);
   };
 
   return (

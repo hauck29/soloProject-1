@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { removeAnswer } from "../../store/answers";
 import { useHistory } from "react-router";
-import { editAnswer } from "../../store/answers";
 import "./AnswersFeed.css";
 
 const Answers = ({ answer }) => {
@@ -10,19 +9,20 @@ const Answers = ({ answer }) => {
   const history = useHistory();
   const [editAnswer, setEditAnswer] = useState(false);
 
-  const handleDelete = (answer) => {
+  const handleAnsDelete = (answer) => {
     dispatch(removeAnswer(answer));
     history.push("/");
   };
 
-  const handleEditASubmit = (e) => {
-    // e.preventDefault();
-    const payload = {
-      id: answer.id,
-    };
-    dispatch(editAnswer(payload));
-    setEditAnswer(!editAnswer);
-  };
+  //removed edit answer functionality for censorship reasons
+  // const handleEditASubmit = (e) => {
+  //   e.preventDefault();
+  //   const payload = {
+  //     answer,
+  //   };
+  //   dispatch(editAnswer(payload));
+  //   setEditAnswer(!editAnswer);
+  // };
 
   return (
     <div>
@@ -31,8 +31,7 @@ const Answers = ({ answer }) => {
           <p>{answer.answer}</p>
         </div>
         <div className="answerBtns">
-          <button onClick={() => handleDelete(answer)}>Delete</button>
-          <button onClick={() => handleEditASubmit(answer)}>Edit</button>
+          <button onClick={() => handleAnsDelete(answer)}>Delete</button>
         </div>
       </div>
     </div>

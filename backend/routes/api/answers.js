@@ -25,7 +25,7 @@ router.get(
       });
     });
 
-    res.json({ question, answers });
+    return res.json({ answers });
   })
 );
 

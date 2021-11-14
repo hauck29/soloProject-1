@@ -74,6 +74,7 @@ function Navigation({ isLoaded }) {
               {isLoaded && sessionLinks}
             </div>
             <div className="links-right">
+              {/* render this searchbar after search component and functionality is up */}
               {/* <div className="header-search-bar">
                     <img
                       className="search-icon"

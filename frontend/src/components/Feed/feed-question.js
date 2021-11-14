@@ -11,7 +11,6 @@ const FeedQuestion = ({ question }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [toEditQuestion, setToEditQuestion] = useState(false);
-  // const [answer, setAnswer] = useState('');
   const [title, setTitle] = useState(question.title);
   const [description, setDescription] = useState(question.description);
 
@@ -24,20 +23,6 @@ const FeedQuestion = ({ question }) => {
     dispatch(removeQuestion(id));
     history.push("/");
   };
-
-  // const handleAnsDelete = (answer) => {
-  //   dispatch(removeAnswer(answer));
-  //   history.push("/");
-  // };
-
-  // const handleEditASubmit = (e) => {
-  //   e.preventDefault();
-  //   const payload = {
-  //     id: answer.id
-  //   };
-  //   dispatch(editAnswer(payload));
-  //   setEditAnswer(!editAnswer);
-  // };
 
   const handleEditQSubmit = (e) => {
     e.preventDefault();
@@ -55,11 +40,11 @@ const FeedQuestion = ({ question }) => {
       <div className="feed-div">
         <div className="q-box">
           <div className="q-id">
-          <h3>{question.title}</h3>
+            <h3>{question.title}</h3>
             {/* optional chaining (?) resolved the issue of hanging when creating new question */}
-            <p>--posted by {question?.User?.username}</p>
           </div>
-          <p>{question.description}</p>
+            <p className='q-id-name'>--posted by {question?.User?.username}</p>
+          <p className='q-d'>{question.description}</p>
           <div className="q-opts">
             <button
               onClick={() => handleDelete(question.id)}
@@ -80,38 +65,36 @@ const FeedQuestion = ({ question }) => {
               }
               type="submit"
               className="ans-q-btn"
-              >
+            >
               Answer Question
             </button>
-
           </div>
-            <div>
-              {toEditQuestion && (
-                <form onSubmit={handleEditQSubmit}>
-                  <input
-                    onChange={(e) => setTitle(e.target.value)}
-                    value={title}
-                    placeholder="Question Title"
-                  />
-                  <input
-                    onChange={(e) => setDescription(e.target.value)}
-                    value={description}
-                    placeholder="What is your question?"
-                  />
-                  <button className="question-sumbit-btn" type="submit">
-                    Update Question
-                  </button>
-                  <button className="cancel-btn" onClick={cancel}>
-                    Cancel
-                  </button>
-                </form>
-              )}
-              </div>
+          <div>
+            {toEditQuestion && (
+              <form onSubmit={handleEditQSubmit}>
+                <input
+                  onChange={(e) => setTitle(e.target.value)}
+                  value={title}
+                  placeholder="Question Title"
+                />
+                <input
+                  onChange={(e) => setDescription(e.target.value)}
+                  value={description}
+                  placeholder="What is your question?"
+                />
+                <button className="question-sumbit-btn" type="submit">
+                  Update Question
+                </button>
+                <button className="cancel-btn" onClick={cancel}>
+                  Cancel
+                </button>
+              </form>
+            )}
+          </div>
           <div className="answer-q"></div>
           {question.Answers?.map((answer) => (
             <Answers answer={answer} />
           ))}
-
         </div>
       </div>
     );
@@ -120,11 +103,11 @@ const FeedQuestion = ({ question }) => {
       <div className="feed-div">
         <div className="q-box">
           <div className="q-id">
-          <h3>{question.title}</h3>
-            <p>--posted by {question?.User?.username}</p>
+            <h3>{question.title}</h3>
+            {/* optional chaining (?) resolved the issue of hanging when creating new question */}
           </div>
-          <p>{question.description}</p>
-          <div className="q-opts"></div>
+            <p className='q-id-name'>--posted by {question?.User?.username}</p>
+          <p className='q-d'>{question.description}</p>
         </div>
       </div>
     );

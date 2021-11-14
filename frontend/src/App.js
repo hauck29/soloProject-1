@@ -22,7 +22,7 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path='/' exact>
+          <Route path="/" exact>
             <Questions />
           </Route>
           <Route path="/login">
@@ -31,16 +31,15 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path='/newQuestion'>
+          <Route path="/newQuestion">
             <CreateQuestion />
           </Route>
-          <Route path='/editQuestion'>
+          <Route path="/editQuestion">
             <EditQuestion />
           </Route>
-          <Route path='/questions/:questionId/answer/new'>
+          <Route path="/questions/:questionId/answer/new">
             <CreateAnswer />
           </Route>
-          
         </Switch>
       )}
     </>

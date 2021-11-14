@@ -34,7 +34,7 @@ const CreateQuestion = () => {
 
     setTimeout(() => {
       history.push("/");
-    }, 250);
+    }, 100);
   };
 
   return (

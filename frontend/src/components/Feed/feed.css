@@ -4,6 +4,7 @@ p {
 
 .q-opts {
     display: flex;
+    margin: 20px;
 }
 .feed-div {
     display: flex;
@@ -24,13 +25,21 @@ p {
 }
 .q-id {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: flex-start;
     padding-top: 50px;
+}
+.q-id-name {
+    font-size: x-small;
 }
 .q-box {
     padding-left: 25px;
+    display: flex;
+    flex-direction: column;
 }
 .ans-q-btn {
     margin-left: 225px;
 }
-
+.q-d {
+    margin: 50px;
+}
