@@ -33,11 +33,6 @@
 >This project was done during the week of November 8th - 14th, 2021.
 >curiousCat displays questions and answers (on the same card) that users can ask and answer at their leisure.
 
->During compilation of this project, I required assistance with my backend routes to add and edit questions.
->I estimate that I personally completed 95% of this project, receiving assistance for the last 5%.
-
->I would like to extend a warm thank you to Ryan Maloney, Bill Adams, Ash Tucker and Alfredo Sugowara!
->The discussions we had to clear concepts were enlightening pivotal.
 
 # Features
 >Sign up/Login with credentials
@@ -49,3 +44,10 @@
 >Report questions or answers for offensiveness
 >Continously refine css to look modern
 >Search feature
+
+# Special Thanks
+>During compilation of this project, I required assistance with my backend routes to add and edit questions.
+>I estimate that I personally completed 95% of this project, receiving assistance for the last 5%.
+
+>I would like to extend a warm thank you to Ryan Maloney, Bill Adams, Ash Tucker and Alfredo Sugowara!
+>The discussions we had to clear concepts were enlightening pivotal.
