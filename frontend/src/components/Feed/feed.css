@@ -16,6 +16,7 @@ p {
     margin-bottom: 20px;
     box-shadow: 3px;
     align-items: center;
+    position: relative;
 
 }
 .feed-div:hover {
@@ -32,6 +33,4 @@ p {
 .ans-q-btn {
     margin-left: 225px;
 }
-.q-box {
-    position: relative;
-}
+

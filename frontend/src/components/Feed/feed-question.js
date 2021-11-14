@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./feed.css";
 import { removeQuestion, editQuestion } from "../../store/questions";
+import { removeAnswer, editAnswer } from "../../store/answers";
 import { useHistory } from "react-router";
 import Answers from "../AnswersFeed/index";
 
@@ -10,6 +11,8 @@ const FeedQuestion = ({ question }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [toEditQuestion, setToEditQuestion] = useState(false);
+  const [editAnswer, setEditAnswer] = useState(false);
+  const [answer, setAnswer] = useState('');
   const [title, setTitle] = useState(question.title);
   const [description, setDescription] = useState(question.description);
 
@@ -23,7 +26,16 @@ const FeedQuestion = ({ question }) => {
     history.push("/");
   };
 
-  const handleEditSubmit = (e) => {
+  const handleEditASubmit = (e) => {
+    e.preventDefault();
+    const payload = {
+      id: answer.id
+    };
+    dispatch(editAnswer(payload));
+    setEditAnswer(!editAnswer);
+  };
+
+  const handleEditQSubmit = (e) => {
     e.preventDefault();
     const payload = {
       id: question.id,
@@ -38,7 +50,11 @@ const FeedQuestion = ({ question }) => {
     return (
       <div className="feed-div">
         <div className="q-box">
+          <div className="q-id">
           <h3>{question.title}</h3>
+            {/* optional chaining (?) resolved the issue of hanging when creating new question */}
+            <p>--posted by {question?.User?.username}</p>
+          </div>
           <p>{question.description}</p>
           <div className="q-opts">
             <button
@@ -60,43 +76,37 @@ const FeedQuestion = ({ question }) => {
               }
               type="submit"
               className="ans-q-btn"
-            >
+              >
               Answer Question
             </button>
           </div>
+            <div>
+              {toEditQuestion && (
+                <form onSubmit={handleEditQSubmit}>
+                  <input
+                    onChange={(e) => setTitle(e.target.value)}
+                    value={title}
+                    placeholder="Question Title"
+                  />
+                  <input
+                    onChange={(e) => setDescription(e.target.value)}
+                    value={description}
+                    placeholder="What is your question?"
+                  />
+                  <button className="question-sumbit-btn" type="submit">
+                    Update Question
+                  </button>
+                  <button className="cancel-btn" onClick={cancel}>
+                    Cancel
+                  </button>
+                </form>
+              )}
+              </div>
           <div className="answer-q"></div>
-          <div className="q-id">
-            {/* optional chaining (?) resolved the issue of hanging when creating new question */}
-            <p>Posted by {question?.User?.username}</p>
-          </div>
-          {/* map over and make answer card. useSelector to look through answers in current state */}
-          {/* can suse question.id from props and match with question Id for each answer */}
-
-          {/* <Answers /> */}
           {question.Answers?.map((answer) => (
             <Answers answer={answer} />
           ))}
 
-          {toEditQuestion && (
-            <form onSubmit={handleEditSubmit}>
-              <input
-                onChange={(e) => setTitle(e.target.value)}
-                value={title}
-                placeholder="Question Title"
-              />
-              <input
-                onChange={(e) => setDescription(e.target.value)}
-                value={description}
-                placeholder="What is your question?"
-              />
-              <button className="question-sumbit-btn" type="submit">
-                Update Question
-              </button>
-              <button className="cancel-btn" onClick={cancel}>
-                Cancel
-              </button>
-            </form>
-          )}
         </div>
       </div>
     );
@@ -104,12 +114,12 @@ const FeedQuestion = ({ question }) => {
     return (
       <div className="feed-div">
         <div className="q-box">
+          <div className="q-id">
           <h3>{question.title}</h3>
+            <p>--posted by {question?.User?.username}</p>
+          </div>
           <p>{question.description}</p>
           <div className="q-opts"></div>
-          <div className="q-id">
-            <p>Posted by {question?.User?.username}</p>
-          </div>
         </div>
       </div>
     );
