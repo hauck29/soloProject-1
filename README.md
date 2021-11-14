@@ -45,7 +45,7 @@ The discussions we had to clear concepts were enlightening aivotal.
 >Add, edit and remove answers from the answers feed of a particular question
 
 # To-Do List
-Like/unlike questions and answers
+>Like/unlike questions and answers
 Report questions or answers for offensiveness
 Continously refine css to look modern
 Search feature
