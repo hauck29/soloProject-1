@@ -13,7 +13,6 @@ body {
 .header-title {
     display: flex;
     flex-direction: column;
-    width: 80%;
     align-items: flex-end;
     padding: 100px;
 }
@@ -22,7 +21,7 @@ body {
     font-size: small;
 }
 .header-pic > img {
-    width: 100%;
+    width: 50%;
     margin: 50px;
     border: 2px solid rgb(124, 154, 184);
     border-radius: 5px;
@@ -127,7 +126,7 @@ button {
     box-shadow: 0 0 5px black;
 }
 button:hover {
-    background-color: white;
+    background-color: whitesmoke;
 }
 .ask-q-btn {
     margin-left: 20px;
@@ -145,10 +144,13 @@ button:hover {
 .add-q-btn {
     display: flex;
     justify-content: center;
+    height: 25px;
 }
+
 .ask-a-q-btn {
     width: 150px;
 }
+
 .logged-in-opts {
     display: flex;
     justify-content: flex-end;
