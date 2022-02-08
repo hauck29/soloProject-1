@@ -3,7 +3,7 @@
   padding: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("https://cdn.pixabay.com/photo/2020/04/12/18/13/background-5035258_1280.jpg");
+  background-image: url("https://cdn.mos.cms.futurecdn.net/QUojE4LDBrcRnS7wn7DA9B.jpg");
   background-size: cover;
 }
 
@@ -19,13 +19,7 @@ ul {
   display: flex;
   justify-content: flex-end;
 }
-.nav-head {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-size: 500px;
-  background-repeat: no-repeat;
-}
+
 .header-title {
   display: flex;
   flex-direction: column;
@@ -33,11 +27,11 @@ ul {
   margin-top: 5vh;
 }
 .header-title > p {
-  color: rgb(124, 154, 184);
   font-size: small;
+  color:rgba(255, 255, 255, 0.8)
 }
 .header-title > h1 {
-  color: rgb(124, 154, 184);
+  color:rgba(255, 255, 255, 0.8)
 }
 /* .header-pic > img {
     width: 50%;

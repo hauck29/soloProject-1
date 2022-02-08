@@ -93,7 +93,7 @@ function Navigation({ isLoaded }) {
                 <img src="https://www.seekpng.com/png/detail/15-150625_kittens-clipart-blue-cat-blue-cat-cartoon-pinart.png" />
               </div> */}
               <div className="header-title">
-                <p>welcome to</p>
+                {/* <p>welcome to</p> */}
                 <h1>curiousCat</h1>
                 <p>asking and answering life's parenting questions</p>
               </div>
