@@ -37,6 +37,7 @@ function SignupFormPage() {
 
   return (
     <>
+    <div className='signupWrap'>
     <form onSubmit={handleSubmit}>
       <div className="signup-message">
         <p>Enter your information below to register.</p>
@@ -93,6 +94,7 @@ function SignupFormPage() {
         </div>
       </div>
     </form>
+    </div>
     </>
   );
 }
