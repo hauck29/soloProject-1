@@ -6,15 +6,17 @@
 }
 .inputs-div {
     display: flex;
+    width: 35vw;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
 }
 p{
     font-size: smaller;
 }
 .login-btn-div {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    width: 35vw;
 }
 .user-email-div {
     display: flex;
@@ -26,15 +28,16 @@ p{
 .login-message{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     color: rgb(91, 91, 91);
 }
-.signup-message{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    color: rgb(91, 91, 91);
-}
+
 .cancel-btn {
     margin-left: 20px;
 }
+/* .loginWrap{
+    background-image: url('https://i.imgur.com/1AXr7fp.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100vw;
+  } */

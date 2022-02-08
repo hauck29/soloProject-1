@@ -34,60 +34,64 @@ function LoginFormPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="login-message">
-        <h2>Welcome to CuriousCat!</h2>
-        <p>Please enter your information below to continue.</p>
+    <>
+      <div className='loginWrap'>
+        <form onSubmit={handleSubmit}>
+          <div className="login-message">
+            
+            <p>Please enter your information below to continue.</p>
+          </div>
+          <ul>
+            {errors.map((error, idx) => (
+              <li key={idx}>{error}</li>
+            ))}
+          </ul>
+          <div className="inputs-div">
+            <div className="user-email-div">
+              <label className="login-titles">
+                Username or Email:
+                <input
+                  className="login-labels"
+                  type="text"
+                  value={credential}
+                  onChange={(e) => setCredential(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            <div className="password-div">
+              <label className="login-titles">
+                Password:
+                <input
+                  className="login-labels"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+          </div>
+          <div className="login-btn-div">
+            <button className="login-btn" type="submit">
+              Log In
+            </button>
+            <button
+              onClick={() => {
+                setCredential("Demo-lition");
+                setPassword("password");
+              }}
+              className="demo-btn"
+            >
+              Demo User Login
+            </button>
+            <button className="cancel-btn" onClick={cancel}>
+              Cancel
+            </button>
+          </div>
+        </form>
       </div>
-      <ul>
-        {errors.map((error, idx) => (
-          <li key={idx}>{error}</li>
-        ))}
-      </ul>
-      <div className="inputs-div">
-        <div className="user-email-div">
-          <label className="login-titles">
-            Username or Email:
-            <input
-              className="login-labels"
-              type="text"
-              value={credential}
-              onChange={(e) => setCredential(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-        <div className="password-div">
-          <label className="login-titles">
-            Password:
-            <input
-              className="login-labels"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-      </div>
-      <div className="login-btn-div">
-        <button className="login-btn" type="submit">
-          Log In
-        </button>
-        <button
-          onClick={() => {
-            setCredential("Demo-lition");
-            setPassword("password");
-          }}
-          className="demo-btn"
-        >
-          Demo User Login
-        </button>
-        <button className="cancel-btn" onClick={cancel}>
-          Cancel
-        </button>
-      </div>
-    </form>
+    </>
   );
 }
 

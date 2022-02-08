@@ -57,7 +57,7 @@ function Navigation({ isLoaded }) {
   return (
     <ul>
       <li>
-        <div className="banner-img">
+        {/* <div className="banner-img"> */}
           {/* Cat Banner */}
 
           <div className="head-sec">
@@ -85,17 +85,17 @@ function Navigation({ isLoaded }) {
                   </div> */}
             </div>
           </div>
-        </div>
+        {/* </div> */}
         <section className="header">
           <div className="nav-head">
             <div className="navLinks">
-              <div className="header-pic">
+              {/* <div className="header-pic">
                 <img src="https://www.seekpng.com/png/detail/15-150625_kittens-clipart-blue-cat-blue-cat-cartoon-pinart.png" />
-              </div>
+              </div> */}
               <div className="header-title">
-                <p>welcome to ----</p>
+                <p>welcome to</p>
                 <h1>curiousCat</h1>
-                <p>asking and answering life's meaningless questions</p>
+                <p>asking and answering life's parenting questions</p>
               </div>
             </div>
           </div>

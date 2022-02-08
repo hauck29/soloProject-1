@@ -36,10 +36,10 @@ function SignupFormPage() {
   };
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <div className="signup-message">
-        <h2>Welcome to CuriousCat!!</h2>
-        <p>Please enter your information below to register for an account.</p>
+        <p>Enter your information below to register.</p>
       </div>
       <ul>
         {errors.map((error, idx) => (
@@ -93,6 +93,7 @@ function SignupFormPage() {
         </div>
       </div>
     </form>
+    </>
   );
 }
 

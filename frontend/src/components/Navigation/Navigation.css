@@ -1,8 +1,24 @@
-body {
-    margin:10px;
-    padding:0;
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://cdn.pixabay.com/photo/2020/04/12/18/13/background-5035258_1280.jpg");
+  background-size: cover;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  width: 82vw;
+  display: flex;
+  justify-content: flex-end;
+}
 .nav-head {
   display: flex;
   flex-direction: column;
@@ -11,31 +27,38 @@ body {
   background-repeat: no-repeat;
 }
 .header-title {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5vh;
 }
 .header-title > p {
-    color: rgb(105, 105, 105);
-    font-size: small;
+  color: rgb(124, 154, 184);
+  font-size: small;
 }
-.header-pic > img {
+.header-title > h1 {
+  color: rgb(124, 154, 184);
+}
+/* .header-pic > img {
     width: 50%;
     margin: 50px;
     border: 2px solid rgb(124, 154, 184);
     border-radius: 5px;
     box-shadow: 0 0 20px black;
-}
+} */
 
 .head-sec {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  box-shadow: 0 0 0.4em 0.4em rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  width: 75vw;
 }
 .home-link-cont > p {
   font-weight: bold;
-
+  color: white;
 }
 .home-link {
   display: flex;
@@ -82,22 +105,6 @@ p {
   letter-spacing: 5px;
   padding-bottom: 20px;
   color: rgb(105, 105, 105);
-
-}
-.header {
-  width: 100%;
-  padding: 60px 0;
-  text-align: center;
-  color: rgb(105, 105, 105);
-
-}
-
-.banner-img {
-  height: 50px;
-  background-size: 150px;
-  width: 100%;
-  background-image: url(https://thumbs.dreamstime.com/z/adorable-white-cats-banner-adorable-white-cats-banner-cartoon-style-171756834.jpg);
-  border-radius: 5px;
 }
 .search-icon {
   width: 25px;
@@ -117,41 +124,42 @@ p {
   align-items: flex-end;
 }
 button {
-    background-color: rgb(124, 154, 184);
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    font-size: x-small;
-    border-radius: 5px;
-    box-shadow: 0 0 5px black;
+  background-color: rgb(124, 154, 184);
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  font-size: x-small;
+  border-radius: 5px;
+  box-shadow: 0 0 5px black;
+  border: none;
 }
 button:hover {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 .ask-q-btn {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 .home-link-cont {
-    display: flex;
+  display: flex;
 }
-.home-link-cont > p{
-    margin-left: 10px;
+.home-link-cont > p {
+  margin-left: 10px;
 }
 .demo-btn {
-    margin-left: 20px;
-    width: 100px;
+  margin-left: 20px;
+  width: 100px;
 }
 .add-q-btn {
-    display: flex;
-    justify-content: center;
-    height: 25px;
+  display: flex;
+  justify-content: center;
+  height: 25px;
 }
 
 .ask-a-q-btn {
-    width: 150px;
+  width: 150px;
 }
 
 .logged-in-opts {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
