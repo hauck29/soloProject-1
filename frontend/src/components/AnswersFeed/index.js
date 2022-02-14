@@ -11,18 +11,17 @@ const Answers = ({ answer }) => {
 
   const handleAnsDelete = (answer) => {
     dispatch(removeAnswer(answer));
-    history.push("/");
+    // history.push("/");
   };
 
-  //removed edit answer functionality for censorship reasons
-  // const handleEditASubmit = (e) => {
-  //   e.preventDefault();
-  //   const payload = {
-  //     answer,
-  //   };
-  //   dispatch(editAnswer(payload));
-  //   setEditAnswer(!editAnswer);
-  // };
+  const handleEditASubmit = (e) => {
+    e.preventDefault();
+    const payload = {
+      answer,
+    };
+    dispatch(editAnswer(payload));
+    setEditAnswer(!editAnswer);
+  };
 
   return (
     <div>

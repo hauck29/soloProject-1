@@ -4,8 +4,6 @@ const SET_QUESTIONS = "questions/setQuestions";
 const ADD_A_QUESTION = "questions/addQuestion";
 const EDIT_A_QUESTION = "questions/editQuestion";
 const REMOVE_A_QUESTION = "questions/delete";
-const ADD_AN_ANSWER = "answers/addAnswer";
-const REMOVE_AN_ANSWER = "answers/delete";
 
 const setQuestions = (payload) => {
   return {
