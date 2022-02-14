@@ -11,19 +11,18 @@ const Answers = ({ answer }) => {
 
   const handleAnsDelete = (answer) => {
     dispatch(removeAnswer(answer));
-    setTimeout(() => {
-      history.push("/");
-    }, 100);
+    history.push("/");
   };
 
-  const handleEditASubmit = (e) => {
-    e.preventDefault();
-    const payload = {
-      answer,
-    };
-    dispatch(editAnswer(payload));
-    setEditAnswer(!editAnswer);
-  };
+  //removed edit answer functionality for censorship reasons
+  // const handleEditASubmit = (e) => {
+  //   e.preventDefault();
+  //   const payload = {
+  //     answer,
+  //   };
+  //   dispatch(editAnswer(payload));
+  //   setEditAnswer(!editAnswer);
+  // };
 
   return (
     <div>
@@ -32,10 +31,7 @@ const Answers = ({ answer }) => {
           <p>{answer.answer}</p>
         </div>
         <div className="answerBtns">
-          <button onClick={() => handleAnsDelete(answer)}>Delete Answer</button>
-          {/* <button onClick={( setEditAnswer(!editAnswer))}>
-            Edit Answer
-          </button> */}
+          <button onClick={() => handleAnsDelete(answer)}>Delete</button>
         </div>
       </div>
     </div>
