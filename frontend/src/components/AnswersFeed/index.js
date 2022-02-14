@@ -11,7 +11,9 @@ const Answers = ({ answer }) => {
 
   const handleAnsDelete = (answer) => {
     dispatch(removeAnswer(answer));
-    // history.push("/");
+    setTimeout(() => {
+      history.push("/");
+    }, 100);
   };
 
   const handleEditASubmit = (e) => {
@@ -30,7 +32,10 @@ const Answers = ({ answer }) => {
           <p>{answer.answer}</p>
         </div>
         <div className="answerBtns">
-          <button onClick={() => handleAnsDelete(answer)}>Delete</button>
+          <button onClick={() => handleAnsDelete(answer)}>Delete Answer</button>
+          <button onClick={( setEditAnswer(!editAnswer))}>
+            Edit Answer
+          </button>
         </div>
       </div>
     </div>
