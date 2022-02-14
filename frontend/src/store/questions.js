@@ -91,16 +91,16 @@ const questionReducer = (state = {}, action) => {
       newState = { ...state };
       delete newState[action.payload];
       return newState;
-    case ADD_AN_ANSWER:
-      newState = { ...state };
-      return newState;
-    case REMOVE_AN_ANSWER:
-      newState = { ...state };
-      const ansIdx = newState[action.payload.questionId].Answers.findIndex(
-        (ans) => ans.id === action.payload.id
-      );
-      newState[action.payload.questionId].Answers.splice(ansIdx, 1);
-      return newState;
+    // case ADD_AN_ANSWER:
+    //   newState = { ...state };
+    //   return newState;
+    // case REMOVE_AN_ANSWER:
+    //   newState = { ...state };
+    //   const ansIdx = newState[action.payload.questionId].Answers.findIndex(
+    //     (ans) => ans.id === action.payload.id
+    //   );
+    //   newState[action.payload.questionId].Answers.splice(ansIdx, 1);
+    //   return newState;
     default:
       return state;
   }
