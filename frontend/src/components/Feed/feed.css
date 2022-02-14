@@ -53,4 +53,5 @@ p {
     border: 2px solid rgb(124, 154, 184);
     border-radius: 15px;
     box-shadow: 0 0 20px;
+    overflow-y: scroll;
 }
