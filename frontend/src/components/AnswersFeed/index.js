@@ -33,9 +33,9 @@ const Answers = ({ answer }) => {
         </div>
         <div className="answerBtns">
           <button onClick={() => handleAnsDelete(answer)}>Delete Answer</button>
-          <button onClick={( setEditAnswer(!editAnswer))}>
+          {/* <button onClick={( setEditAnswer(!editAnswer))}>
             Edit Answer
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
