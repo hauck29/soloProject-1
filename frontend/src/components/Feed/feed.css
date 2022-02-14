@@ -11,7 +11,7 @@ p {
     width: 50%;
     justify-content: flex-start;
     margin-left: 100px;
-    overflow: auto;
+    overflow: hidden;
     box-shadow: 0 0 20px;
     border-radius: 5px;
     margin-bottom: 100px;
@@ -19,7 +19,6 @@ p {
     border: 2px solid rgb(124, 154, 184);
     align-items: center;
     position: relative;
-    /* background-color: lightgray; */
     backdrop-filter: blur(10px);
 
 }
