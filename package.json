@@ -22,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/hauck29/soloProject-1/issues"
   },
-  "homepage": "https://github.com/hauck29/soloProject-1#readme"
+  "homepage": "https://github.com/hauck29/soloProject-1#readme",
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
+  },
+  "dependencies": {
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.16.1"
+  }
 }

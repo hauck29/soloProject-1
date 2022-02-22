@@ -1,55 +1,49 @@
-//Removed edit answer functionality for censorship reasons
+// Removed edit answer functionality for censorship reasons
 
 
-// import { useState } from "react";
-// import { useDispatch } from "react-redux";
-// import { useHistory } from "react-router-dom";
-// import { editQuestion } from "../../store/questions";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { editAnswer } from "../../store/answers";
 
-// const EditQuestion = () => {
-//   const [title, setTitle] = useState("");
-//   const [description, setDescription] = useState("");
-//   const history = useHistory();
-//   const dispatch = useDispatch();
+const EditAnswer = () => {
+  const [answer, setAnswer] = useState("");
+  const history = useHistory();
+  const dispatch = useDispatch();
 
-//   const cancel = (e) => {
-//     e.preventDefault();
-//     history.push("/");
-//   };
+  const cancel = (e) => {
+    e.preventDefault();
+    history.push("/");
+  };
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     const payload = {
-//       title,
-//       description,
-//     };
-//     dispatch(editQuestion(payload));
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const payload = {
+      answer,
+    };
+    dispatch(editAnswer(payload));
 
-//     history.push("/");
-//   };
+    history.push("/");
+  };
 
-//   return (
-//     <div className="add-question">
-//       <h3>Edit Question</h3>
-//       <form onSubmit={handleSubmit} className="add-question">
-//         <input
-//           onChange={(e) => setTitle(e.target.value)}
-//           value={title}
-//           placeholder="Question Title"
-//         />
-//         <input
-//           onChange={(e) => setDescription(e.target.value)}
-//           value={description}
-//           placeholder="What is your question?"
-//         />
-//         <button className="question-sumbit-btn" type="submit">
-//           Update Question
-//         </button>
-//         <button className="cancel-btn" onClick={cancel}>
-//           Cancel
-//         </button>
-//       </form>
-//     </div>
-//   );
-// };
-// export default EditQuestion;
+  return (
+    <div className="add-question">
+      <h3>Edit Answer</h3>
+      <form onSubmit={handleSubmit} className="add-question">
+
+        <input
+          onChange={(e) => setAnswer(e.target.value)}
+          value={answer}
+          placeholder="What is your answer?"
+        />
+        <button className="question-sumbit-btn" type="submit">
+          Update Answer
+        </button>
+        <button className="cancel-btn" onClick={cancel}>
+          Cancel
+        </button>
+      </form>
+    </div>
+  );
+};
+export default EditAnswer;
